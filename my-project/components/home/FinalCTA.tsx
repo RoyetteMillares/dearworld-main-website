@@ -41,7 +41,7 @@ export function FinalCTA() {
 
                     <div className="pt-8">
                         <Link href="/contact">
-                            <Button size="lg" className="h-20 px-12 bg-[#FFB300] text-black hover:bg-white hover:text-black text-2xl font-black uppercase tracking-widest transition-all duration-300 shadow-[0_0_50px_rgba(255,179,0,0.2)] hover:shadow-[0_0_70px_rgba(255,255,255,0.2)]">
+                            <Button size="lg" className="h-20 px-12 bg-[#FFB300] text-black hover:bg-white hover:text-black text-2xl font-black uppercase tracking-widest transition-all duration-300">
                                 Connect With Us <ArrowRight className="ml-4 h-8 w-8" />
                             </Button>
                         </Link>

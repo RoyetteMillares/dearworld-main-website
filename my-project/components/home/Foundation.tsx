@@ -71,7 +71,7 @@ export function Foundation() {
                         className="text-6xl md:text-8xl font-black tracking-[-0.04em] uppercase leading-[0.85]"
                     >
                         Help others tell <br />
-                        <span className="text-[#FFB300] relative italic inline-block">
+                        <span className=" relative italic inline-block">
                             their stories
                             <div className="absolute -bottom-4 md:-bottom-8 left-0 w-full h-12 overflow-visible pointer-events-none opacity-40">
                                 <Image
@@ -101,15 +101,7 @@ export function Foundation() {
                         </p>
                     </motion.div>
 
-                    {/* Decorative Emotive Text */}
-                    <motion.div
-                        initial={{ opacity: 0, rotate: -5 }}
-                        whileInView={{ opacity: 0.4, rotate: -2 }}
-                        viewport={{ once: true }}
-                        className="absolute hidden xl:block -left-12 top-24 text-4xl text-[#FFB300]/60 -z-10 font-[family-name:var(--font-handwritten)]"
-                    >
-                        "Tell me your story"
-                    </motion.div>
+
                 </div>
 
                 {/* Tabbed Navigation */}
@@ -208,13 +200,13 @@ export function Foundation() {
                             {/* Abstract Hover Effect */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFB300] rounded-full blur-[100px] opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none -translate-y-1/2 translate-x-1/2" />
 
-                            <p className="text-[#FFB300] text-3xl mb-8">
+                            <p className=" text-3xl mb-8">
                                 "The story you <br /> carry matters."
                             </p>
                             <p className="text-gray-400 text-sm mb-12 uppercase tracking-[0.2em] font-bold">
                                 Join over 50,000 people who have shared their truth.
                             </p>
-                            <button className="flex items-center gap-4 text-xs font-black uppercase tracking-[0.4em] transition-all hover:text-[#FFB300]">
+                            <button className="flex items-center gap-4 text-xs font-black uppercase tracking-[0.4em] transition-all ">
                                 Support us <ArrowUpRight className="w-4 h-4" />
                             </button>
                         </div>
