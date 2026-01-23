@@ -28,7 +28,7 @@
 
 * **Primary Typeface:** **Helvetica** (Bold, Regular, Light)
 * *Usage:* All headers and body text.
-
+dont USE Yellow color on any text
 * **Secondary Typeface:** **Helvetica Neue Condensed** (Bold, Black)
 * *Usage:* Secondary design elements, labels, and specialized UI components.
 

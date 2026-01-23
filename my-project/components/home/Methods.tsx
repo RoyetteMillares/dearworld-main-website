@@ -99,16 +99,6 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                     <div className="absolute inset-0 z-0">
                         <div className="absolute inset-0 z-10 bg-black/60 transition-colors duration-500 group-hover:bg-black/40" />
 
-                        {/* Brand Texture Overlay (Scribble Grid) */}
-                        <div className="absolute inset-0 z-15 opacity-[0.03] pointer-events-none group-hover:opacity-[0.08] transition-opacity duration-500">
-                            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                                <pattern id={`grid-${index}`} width="10" height="10" patternUnits="userSpaceOnUse">
-                                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5" />
-                                </pattern>
-                                <rect width="100" height="100" fill={`url(#grid-${index})`} />
-                            </svg>
-                        </div>
-
                         {renderMedia(false)}
                     </div>
 
@@ -122,7 +112,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                             <div className="mb-4 flex items-center justify-between">
                                 <h3 className="font-oswald text-6xl font-black uppercase tracking-[-0.04em] text-white md:text-7xl lg:text-8xl leading-[0.8]">
                                     {title.split(' ').map((word, i) => (
-                                        <span key={i} className="block group-hover:text-[#FFB300] transition-colors duration-500">
+                                        <span key={i} className="block group-hover:text-white transition-colors duration-500">
                                             {word}
                                         </span>
                                     ))}
@@ -168,7 +158,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                 <motion.span
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    className="text-[#FFB300] font-black uppercase tracking-[0.5em] text-[12px] md:text-sm"
+                                    className="text-white font-black uppercase tracking-[0.5em] text-[12px] md:text-sm"
                                 >
                                     Deep Dive
                                 </motion.span>
@@ -195,7 +185,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                     {stats?.map((stat, i) => (
                                         <div key={i} className="space-y-2">
                                             <p className="text-5xl md:text-6xl font-black text-white leading-none tracking-tighter">{stat.value}</p>
-                                            <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-[#FFB300]">{stat.label}</p>
+                                            <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/60">{stat.label}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -207,8 +197,8 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                         "Scalable for global teams"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-center gap-6 text-lg font-medium text-gray-300">
-                                            <div className="shrink-0 w-8 h-8 rounded-full bg-[#FFB300]/10 flex items-center justify-center">
-                                                <CheckCircle2 className="w-4 h-4 text-[#FFB300]" />
+                                            <div className="shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                                                <CheckCircle2 className="w-4 h-4 text-white" />
                                             </div>
                                             {item}
                                         </li>
@@ -223,7 +213,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                 className="mt-20 flex flex-col sm:flex-row gap-6"
                             >
                                 <Link href={href} className="flex-1">
-                                    <Button className="w-full h-20 md:h-24 bg-white text-black hover:bg-[#FFB300] transition-all duration-500 text-xl font-black uppercase tracking-widest rounded-none shadow-[20px_20px_0px_rgba(255,179,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                                    <Button className="w-full h-20 md:h-24 bg-white text-black hover:bg-[#FFB300] hover:text-black transition-all duration-500 text-xl font-black uppercase tracking-widest rounded-none shadow-[20px_20px_0px_rgba(255,179,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
                                         Full Resolution <ArrowUpRight className="ml-4 w-8 h-8" />
                                     </Button>
                                 </Link>

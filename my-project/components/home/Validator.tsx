@@ -36,7 +36,7 @@ export function Validator() {
                         "We didn't just build a methodology. We build a way for people to finally be{" "}
                         <span className="relative inline-block mx-2">
                             SEEN
-                            <svg className="absolute -inset-x-4 -inset-y-2 w-[120%] h-[140%] text-[#FFB300]" viewBox="0 0 100 40">
+                            <svg className="absolute -inset-x-4 -inset-y-2 w-[120%] h-[140%] text-white opacity-40" viewBox="0 0 100 40">
                                 <motion.ellipse
                                     cx="50" cy="20" rx="45" ry="15"
                                     stroke="currentColor" strokeWidth="2" fill="none"

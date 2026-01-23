@@ -14,7 +14,7 @@ export function ROIStats() {
         <section className="bg-black py-32 text-white overflow-hidden relative">
             <div className="container mx-auto px-6">
                 <div className="mb-20 text-center">
-                    <span className="text-sm font-bold uppercase tracking-[0.3em] text-[#FFB300]">
+                    <span className="text-sm font-bold uppercase tracking-[0.3em] text-white opacity-40">
                         Proven Impact
                     </span>
                     <h2 className="mt-6 text-4xl font-bold md:text-6xl tracking-tighter">
@@ -32,7 +32,7 @@ export function ROIStats() {
                             transition={{ delay: i * 0.1, duration: 0.8 }}
                             className="flex flex-col items-center text-center group"
                         >
-                            <span className="text-6xl md:text-8xl font-black font-sans tracking-tighter text-[#FFB300] transition-transform duration-500 group-hover:scale-110">
+                            <span className="text-6xl md:text-8xl font-black font-sans tracking-tighter text-white transition-transform duration-500 group-hover:scale-110">
                                 {stat.value}
                             </span>
                             <h3 className="mt-4 text-xl font-bold uppercase tracking-widest">

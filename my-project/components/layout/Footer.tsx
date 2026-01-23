@@ -17,14 +17,14 @@ export function Footer() {
                             We help people and organizations find their voice through the power of storytelling. Born in New Orleans, shared with the world.
                         </p>
                         <div className="flex gap-4">
-                            <Link href="/press" className="text-sm font-medium hover:text-[#FFB300] transition-colors underline underline-offset-4">Press Kit</Link>
-                            <Link href="/legal" className="text-sm font-medium hover:text-[#FFB300] transition-colors underline underline-offset-4">Privacy Policy</Link>
+                            <Link href="/press" className="text-sm font-medium hover:text-white transition-colors underline underline-offset-4">Press Kit</Link>
+                            <Link href="/legal" className="text-sm font-medium hover:text-white transition-colors underline underline-offset-4">Privacy Policy</Link>
                         </div>
                     </div>
 
                     {/* Quick Links */}
                     <div className="space-y-4">
-                        <h3 className="font-bold uppercase tracking-widest text-[#FFB300] text-sm">Services</h3>
+                        <h3 className="font-bold uppercase tracking-widest text-white text-sm">Services</h3>
                         <ul className="space-y-2 text-gray-400">
                             <li><Link href="/solutions/keynote" className="hover:text-white transition-colors">Keynote Experiences</Link></li>
                             <li><Link href="/solutions/brain-tattoo" className="hover:text-white transition-colors">Brain Tattoo™</Link></li>
@@ -35,15 +35,15 @@ export function Footer() {
 
                     {/* Newsletter / CTA */}
                     <div className="space-y-6">
-                        <h3 className="font-bold uppercase tracking-widest text-[#FFB300] text-sm">Join the Movement</h3>
+                        <h3 className="font-bold uppercase tracking-widest text-white text-sm">Join the Movement</h3>
                         <div className="relative">
                             <input
                                 type="email"
                                 placeholder="Email Address"
-                                className="w-full bg-zinc-900 border-b border-white/20 py-3 px-0 focus:outline-none focus:border-[#FFB300] transition-colors"
+                                className="w-full bg-zinc-900 border-b border-white/20 py-3 px-0 focus:outline-none focus:border-white transition-colors"
                             />
                             <button className="absolute right-0 top-1/2 -translate-y-1/2">
-                                <MoveRight className="text-[#FFB300] w-6 h-6" />
+                                <MoveRight className="text-white w-6 h-6" />
                             </button>
                         </div>
                         <p className="text-xs text-gray-500">

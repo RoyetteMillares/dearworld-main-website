@@ -10,7 +10,7 @@ export function FinalCTA() {
         <section className="relative bg-black py-40 overflow-hidden">
             {/* Background Hand-drawn Circle Animation (Large) */}
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-20">
-                <svg className="w-[800px] h-[800px] text-[#FFB300]" viewBox="0 0 100 100">
+                <svg className="w-[800px] h-[800px] text-black" viewBox="0 0 100 100">
                     <motion.circle
                         cx="50" cy="50" r="45"
                         stroke="currentColor" strokeWidth="0.5" fill="none"
@@ -32,7 +32,7 @@ export function FinalCTA() {
                 >
                     <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tight text-white leading-none">
                         Didn't find what you were <br />
-                        <span className="text-[#FFB300]">looking for?</span>
+                        <span className="text-white opacity-80">looking for?</span>
                     </h2>
 
                     <p className="text-xl md:text-2xl text-gray-400 font-medium max-w-2xl mx-auto">

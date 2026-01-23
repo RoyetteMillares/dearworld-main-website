@@ -91,10 +91,10 @@ export function Hero() {
                     transition={{ duration: 1, delay: 1 }}
                     className="relative mt-8"
                 >
-                    <p className="max-w-xl text-center text-lg font-bold tracking-widest text-[#FFB300] md:text-2xl uppercase italic">
+                    <p className="max-w-xl text-center text-lg font-bold tracking-widest text-white md:text-2xl uppercase italic opacity-80">
                         Built on the power of storytelling.
                     </p>
-                    <svg className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-4 text-[#FFB300]/40" viewBox="0 0 200 20">
+                    <svg className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-48 h-4 text-white/40" viewBox="0 0 200 20">
                         <motion.path
                             d="M5,15 C40,5 160,5 195,15"
                             stroke="currentColor"

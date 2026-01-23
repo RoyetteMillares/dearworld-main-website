@@ -42,7 +42,7 @@ export function SplitIdentity() {
                     <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-500">Organizations</span>
                     <h2 className="text-5xl font-black tracking-[-0.04em] uppercase md:text-7xl">
                         Building <br />
-                        <span className="text-[#FFB300]">Skills</span>
+                        <span className="text-white">Skills</span>
                     </h2>
                     <p className="text-gray-400 text-lg leading-relaxed">
                         Transform your corporate culture through the proprietary science of personal narrative.

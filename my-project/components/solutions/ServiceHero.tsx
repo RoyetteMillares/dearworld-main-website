@@ -12,7 +12,7 @@ export function ServiceHero() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <span className="text-sm font-bold uppercase tracking-[0.3em] text-[#FFB300]">
+                        <span className="text-sm font-bold uppercase tracking-[0.3em] text-black/40">
                             Professional Services
                         </span>
                         <h1 className="mt-8 text-5xl font-bold leading-[1.1] tracking-tighter text-black md:text-7xl lg:text-8xl">

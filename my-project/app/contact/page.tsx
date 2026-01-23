@@ -18,7 +18,7 @@ export default function ContactPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-[#FFB300] font-bold uppercase tracking-[0.4em] text-sm">Get in Touch</span>
+                            <span className="text-white opacity-40 font-bold uppercase tracking-[0.4em] text-sm">Get in Touch</span>
                             <h1 className="mt-4 text-6xl md:text-8xl font-black uppercase tracking-tight leading-[0.85]">
                                 Start your <br />
                                 <span className="text-white/20">story.</span>
@@ -71,35 +71,35 @@ export default function ContactPage() {
                         <form className="space-y-8">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-[#FFB300]">Full Name</label>
+                                    <label className="text-xs font-bold uppercase tracking-widest text-white opacity-40">Full Name</label>
                                     <Input
                                         placeholder="Robert X. Fogarty"
-                                        className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 focus-visible:ring-0 focus-visible:border-[#FFB300] transition-all placeholder:text-white/10"
+                                        className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 focus-visible:ring-0 focus-visible:border-white transition-all placeholder:text-white/10"
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-[#FFB300]">Work Email</label>
+                                    <label className="text-xs font-bold uppercase tracking-widest text-white opacity-40">Work Email</label>
                                     <Input
                                         type="email"
                                         placeholder="robert@organization.com"
-                                        className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 focus-visible:ring-0 focus-visible:border-[#FFB300] transition-all placeholder:text-white/10"
+                                        className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 focus-visible:ring-0 focus-visible:border-white transition-all placeholder:text-white/10"
                                     />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-widest text-[#FFB300]">Organization</label>
+                                <label className="text-xs font-bold uppercase tracking-widest text-white opacity-40">Organization</label>
                                 <Input
                                     placeholder="Company Name"
-                                    className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 focus-visible:ring-0 focus-visible:border-[#FFB300] transition-all placeholder:text-white/10"
+                                    className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 focus-visible:ring-0 focus-visible:border-white transition-all placeholder:text-white/10"
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-widest text-[#FFB300]">Tell us about your event</label>
+                                <label className="text-xs font-bold uppercase tracking-widest text-white opacity-40">Tell us about your event</label>
                                 <Textarea
                                     placeholder="What are you building?"
-                                    className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 focus-visible:ring-0 focus-visible:border-[#FFB300] transition-all min-h-[120px] placeholder:text-white/10"
+                                    className="bg-transparent border-0 border-b border-white/20 rounded-none px-0 py-4 focus-visible:ring-0 focus-visible:border-white transition-all min-h-[120px] placeholder:text-white/10"
                                 />
                             </div>
 

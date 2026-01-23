@@ -19,18 +19,18 @@ export function Navbar() {
             {/* Logo */}
             <Link href="/" className="text-2xl font-bold tracking-tighter uppercase">
                 Dear World
-                {isFoundation && <span className="text-[#FFB300] ml-2 font-normal normal-case">Foundation</span>}
+                {isFoundation && <span className="text-white ml-2 font-normal normal-case opacity-60">Foundation</span>}
             </Link>
 
             {/* Center Nav - Hidden on mobile, flex on md */}
             <div className="hidden md:flex items-center gap-8 font-medium">
-                <Link href="/solutions" className="hover:text-[#FFB300] transition-colors">
+                <Link href="/solutions" className="hover:opacity-60 transition-opacity">
                     Solutions
                 </Link>
-                <Link href="/results" className="hover:text-[#FFB300] transition-colors">
+                <Link href="/results" className="hover:opacity-60 transition-opacity">
                     Our Work
                 </Link>
-                <Link href="/sincerely-club" className="hover:text-[#FFB300] transition-colors">
+                <Link href="/sincerely-club" className="hover:opacity-60 transition-opacity">
                     The Club
                 </Link>
             </div>

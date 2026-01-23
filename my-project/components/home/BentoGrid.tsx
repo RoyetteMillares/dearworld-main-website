@@ -28,7 +28,7 @@ const BentoCard = ({ title, description, className, theme, href }: BentoCardProp
                 </h3>
                 <ArrowUpRight className={cn(
                     "w-8 h-8 transition-transform duration-300 group-hover:rotate-45",
-                    theme === "dark" ? "text-[#FFB300]" : "text-black"
+                    theme === "dark" ? "text-white" : "text-black"
                 )} />
             </div>
 

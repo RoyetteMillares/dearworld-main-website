@@ -43,7 +43,7 @@ export function PartnerImpact() {
                             <span className="text-gray-400 font-bold uppercase tracking-[0.4em] text-xs">Our Impact</span>
                             <h2 className="mt-4 text-5xl md:text-7xl font-black uppercase tracking-tight leading-[0.85]">
                                 Partnerships that <br />
-                                <span className="text-[#FFB300]">transform</span> <br />
+                                <span className="text-black">transform</span> <br />
                                 organizations.
                             </h2>
                             <p className="mt-8 text-xl text-gray-600 leading-relaxed max-w-xl">
@@ -69,7 +69,7 @@ export function PartnerImpact() {
                                     transition={{ duration: 0.5, delay: i * 0.1 }}
                                     className="space-y-4"
                                 >
-                                    <div className="text-[#FFB300]">{metric.icon}</div>
+                                    <div className="text-black">{metric.icon}</div>
                                     <h4 className="text-4xl font-black tracking-tight">{metric.stat}</h4>
                                     <div>
                                         <p className="font-bold uppercase tracking-widest text-sm">{metric.label}</p>
