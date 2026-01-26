@@ -35,9 +35,9 @@
   --sidebar-accent-foreground: #000000;
   --sidebar-border: #ebebeb;
   --sidebar-ring: #000000;
-  --font-sans: Helvetica, Arial, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: Geist Mono, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --radius: 0rem;
   --shadow-x: 0px;
   --shadow-y: 1px;
@@ -55,6 +55,8 @@
   --shadow-2xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.45);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+  --swiper-theme-color: #000000;
+  --swiper-pagination-color: #000000;
 }
 
 .dark {
@@ -90,9 +92,9 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #333333;
   --sidebar-ring: #a4a4a4;
-  --font-sans: Helvetica, Arial, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: Geist Mono, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --radius: 0.5rem;
   --shadow-x: 0px;
   --shadow-y: 1px;
@@ -108,6 +110,8 @@
   --shadow-lg: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 4px 6px -1px hsl(0 0% 0% / 0.18);
   --shadow-xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.18), 0px 8px 10px -1px hsl(0 0% 0% / 0.18);
   --shadow-2xl: 0px 1px 2px 0px hsl(0 0% 0% / 0.45);
+  --swiper-theme-color: #ffffff;
+  --swiper-pagination-color: #ffffff;
 }
 
 @theme inline {
@@ -171,4 +175,17 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Swiper Pagination Overrides */
+/* Swiper Testimonial Pagination Styles */
+.swiper-pagination-bullet,
+.speaking-testimonial-pagination .swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  background: #27272A !important;
+  /* zinc-800 gray */
+  opacity: 1 !important;
+  transition: all 0.3s ease;
+  margin: 0 4px !important;
 }

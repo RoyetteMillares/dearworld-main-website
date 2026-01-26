@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Play, Heart, Target, Sparkles, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Gloria_Hallelujah } from "next/font/google";
+import { Scribble } from "@/components/ui/BrandAssets";
 
 const handwritten = Gloria_Hallelujah({
     weight: "400",
@@ -50,7 +51,7 @@ export function Foundation() {
                 handwritten.variable
             )}
         >
-            <div className="container mx-auto px-6 relative z-10 max-w-7xl">
+            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
                 {/* Header Content */}
                 <div className="text-center space-y-8 mb-24 px-4 relative">
                     <motion.div
@@ -58,9 +59,11 @@ export function Foundation() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="inline-block py-2 px-4 bg-[#FFB300] text-black font-black uppercase tracking-[0.3em] text-[10px] mb-4"
+                        className="inline-block py-1.5 px-4 bg-black text-white rounded-full mb-4"
                     >
-                        Non-Profit Impact
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em]">
+                            Non-Profit Impact
+                        </span>
                     </motion.div>
 
                     <motion.h2
@@ -73,14 +76,7 @@ export function Foundation() {
                         Help others tell <br />
                         <span className=" relative italic inline-block">
                             their stories
-                            <div className="absolute -bottom-4 md:-bottom-8 left-0 w-full h-12 overflow-visible pointer-events-none opacity-40">
-                                <Image
-                                    src="https://uploads-ssl.webflow.com/64589dfd00b95760814407e3/645e7e0e771eac47c3275727_Scribble%2017.svg"
-                                    alt=""
-                                    fill
-                                    className="object-contain"
-                                />
-                            </div>
+                            <Scribble variant="17" className="-bottom-10 md:-bottom-12 left-0 w-full h-16 md:h-24 grayscale opacity-40" />
                         </span>
                     </motion.h2>
 
@@ -121,8 +117,8 @@ export function Foundation() {
                                 className={cn(
                                     "transition-colors",
                                     activeTab === tab.id
-                                        ? "text-[#FFB300]"
-                                        : "text-black group-hover:text-[#FFB300]"
+                                        ? "text-white"
+                                        : "text-black group-hover:text-black/60"
                                 )}
                             >
                                 {tab.icon}
@@ -131,7 +127,7 @@ export function Foundation() {
                             {activeTab === tab.id && (
                                 <motion.div
                                     layoutId="tabUnderline"
-                                    className="absolute bottom-0 left-0 right-0 h-1 bg-[#FFB300]"
+                                    className="absolute bottom-0 left-0 right-0 h-1 bg-black"
                                 />
                             )}
                         </button>
@@ -163,7 +159,7 @@ export function Foundation() {
                                         alt={video.title}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className="object-cover grayscale contrast-[1.1] transition-all duration-[2s] group-hover:scale-110 group-hover:grayscale-0 group-hover:contrast-100"
+                                        className="object-cover transition-all duration-[2s] group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-black/40 transition-colors duration-500 group-hover:bg-black/20" />
                                 </div>
@@ -188,18 +184,15 @@ export function Foundation() {
                                             <p className="text-white/60 text-sm font-medium tracking-wide">
                                                 {video.subtitle}
                                             </p>
-                                            <ArrowUpRight className="w-4 h-4 text-[#FFB300]" />
+                                            <ArrowUpRight className="w-4 h-4 text-white" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
 
-                        {/* Decorative Callout Card - Added rounded-2xl here as well */}
+                        {/* Decorative Callout Card */}
                         <div className="md:col-span-1 md:row-span-1 flex flex-col justify-center p-12 bg-black text-white relative group min-h-[400px] md:min-h-auto overflow-hidden rounded-2xl">
-                            {/* Abstract Hover Effect */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-[#FFB300] rounded-full blur-[100px] opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none -translate-y-1/2 translate-x-1/2" />
-
                             <p className=" text-3xl mb-8">
                                 "The story you <br /> carry matters."
                             </p>
@@ -212,12 +205,6 @@ export function Foundation() {
                         </div>
                     </motion.div>
                 </AnimatePresence>
-            </div>
-
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-20 hidden md:block">
-                <p className="text-xl rotate-1 text-black">
-                    Every portrait has a heartbeat...
-                </p>
             </div>
         </section>
     );

@@ -13,16 +13,18 @@ export function Validator() {
                 </svg>
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="mb-12"
+                        transition={{ duration: 0.6 }}
+                        className="inline-block py-1.5 px-4 bg-black text-white rounded-full mb-4"
                     >
-                        <span className="text-xs font-bold uppercase tracking-[0.5em] text-gray-400">The Validation</span>
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em]">
+                            The Validation
+                        </span>
                     </motion.div>
 
                     <motion.h2
@@ -57,7 +59,7 @@ export function Validator() {
                         transition={{ duration: 1, delay: 1 }}
                         className="mt-16 flex flex-col items-center"
                     >
-                        <div className="w-16 h-16 bg-black rounded-full mb-4 overflow-hidden border-2 border-[#FFB300]">
+                        <div className="w-16 h-16 bg-black rounded-full mb-4 overflow-hidden border-2 border-white/20">
                             {/* Placeholder for Robert Fogarty Portrait */}
                             <div className="w-full h-full bg-zinc-800 flex items-center justify-center text-[10px] text-white">RXF</div>
                         </div>

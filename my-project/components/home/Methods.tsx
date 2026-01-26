@@ -38,7 +38,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
             return (
                 <div className={cn(
                     "absolute inset-0 h-full w-full overflow-hidden pointer-events-none",
-                    !isModal && "opacity-40 grayscale contrast-[1.2] transition-all duration-[2s] group-hover:scale-110 group-hover:opacity-60 group-hover:grayscale-0"
+                    !isModal && "opacity-40 transition-all duration-[2s] group-hover:scale-110 group-hover:opacity-60"
                 )}>
                     <iframe
                         src={`${videoSrc}${videoSrc?.includes('?') ? '&' : '?'}background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&playsinline=1`}
@@ -59,7 +59,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                     playsInline
                     className={cn(
                         "h-full w-full object-cover",
-                        !isModal && "opacity-40 grayscale contrast-[1.2] transition-all duration-[2s] group-hover:scale-110 group-hover:opacity-60 group-hover:grayscale-0"
+                        !isModal && "opacity-40 transition-all duration-[2s] group-hover:scale-110 group-hover:opacity-60"
                     )}
                 >
                     <source src={videoSrc} type="video/mp4" />
@@ -71,7 +71,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
             return (
                 <div className={cn(
                     "relative h-full w-full transition-all duration-[2s]",
-                    !isModal && "opacity-40 grayscale contrast-[1.2] group-hover:scale-110 group-hover:opacity-60 group-hover:grayscale-0"
+                    !isModal && "opacity-40 group-hover:scale-110 group-hover:opacity-60"
                 )}>
                     <Image
                         src={imageSrc}
@@ -83,7 +83,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
             );
         }
 
-        return <div className={cn("h-full w-full bg-linear-to-br transition-all duration-[2s]", !isModal && "opacity-20 grayscale group-hover:scale-110 group-hover:opacity-40 group-hover:grayscale-0", fallbackImage || "from-zinc-900 to-black")} />;
+        return <div className={cn("h-full w-full bg-linear-to-br transition-all duration-[2s]", !isModal && "opacity-20 group-hover:scale-110 group-hover:opacity-40", fallbackImage || "from-zinc-900 to-black")} />;
     };
 
     return (
@@ -110,14 +110,14 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
                             <div className="mb-4 flex items-center justify-between">
-                                <h3 className="font-oswald text-6xl font-black uppercase tracking-[-0.04em] text-white md:text-7xl lg:text-8xl leading-[0.8]">
+                                <h3 className="text-6xl font-black uppercase tracking-tighter text-white md:text-7xl lg:text-8xl leading-[0.8]">
                                     {title.split(' ').map((word, i) => (
                                         <span key={i} className="block group-hover:text-white transition-colors duration-500">
                                             {word}
                                         </span>
                                     ))}
                                 </h3>
-                                <div className="rounded-full border border-white/20 p-4 transition-all duration-500 group-hover:bg-[#FFB300] group-hover:border-transparent">
+                                <div className="rounded-full border border-white/20 p-4 transition-all duration-500 group-hover:bg-white group-hover:border-transparent">
                                     <Play className="h-8 w-8 text-white group-hover:text-black transition-colors duration-500 fill-current" />
                                 </div>
                             </div>
@@ -155,13 +155,15 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                     <div className="w-full lg:w-1/2 px-12 py-24 md:px-20 md:py-32 lg:px-32 lg:py-48 flex flex-col justify-center bg-black relative">
                         <div className="max-w-2xl mx-auto lg:mx-0">
                             <DialogHeader>
-                                <motion.span
+                                <motion.div
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    className="text-white font-black uppercase tracking-[0.5em] text-[12px] md:text-sm"
+                                    className="inline-block py-1 px-3 bg-white text-black rounded-full"
                                 >
-                                    Deep Dive
-                                </motion.span>
+                                    <span className="text-[10px] font-black uppercase tracking-[0.4em]">
+                                        Deep Dive
+                                    </span>
+                                </motion.div>
                                 <DialogTitle className="text-6xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.04em] mt-6 text-white leading-[0.85] wrap-break-word">
                                     {title}
                                 </DialogTitle>
@@ -213,12 +215,12 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                 className="mt-20 flex flex-col sm:flex-row gap-6"
                             >
                                 <Link href={href} className="flex-1">
-                                    <Button className="w-full h-20 md:h-24 bg-white text-black hover:bg-[#FFB300] hover:text-black transition-all duration-500 text-xl font-black uppercase tracking-widest rounded-none shadow-[20px_20px_0px_rgba(255,179,0,0.1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1">
+                                    <Button className="w-full h-20 md:h-24 bg-white text-black border-2 border-white hover:bg-black hover:text-white transition-all duration-500 text-xl font-black uppercase tracking-[0.2em] rounded-none">
                                         Full Resolution <ArrowUpRight className="ml-4 w-8 h-8" />
                                     </Button>
                                 </Link>
                                 <Link href="/contact" className="flex-1">
-                                    <Button className="w-full h-20 md:h-24 bg-transparent border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-500 text-xl font-black uppercase tracking-widest rounded-none">
+                                    <Button className="w-full h-20 md:h-24 bg-transparent border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-500 text-xl font-black uppercase tracking-[0.2em] rounded-none">
                                         Book Demo
                                     </Button>
                                 </Link>

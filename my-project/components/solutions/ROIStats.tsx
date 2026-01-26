@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const STATS = [
     { label: "Stories Shared", value: "1M+", sub: "Globally" },
@@ -26,19 +27,19 @@ export function ROIStats() {
                     {STATS.map((stat, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.1, duration: 0.8 }}
-                            className="flex flex-col items-center text-center group"
+                            transition={{ delay: i * 0.1, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                            className="flex flex-col items-center text-center group border border-white/5 bg-white/2 p-12 transition-all duration-700 hover:border-white/20 hover:bg-white/4"
                         >
-                            <span className="text-6xl md:text-8xl font-black font-sans tracking-tighter text-white transition-transform duration-500 group-hover:scale-110">
+                            <span className="text-7xl md:text-9xl font-black italic tracking-tighter text-white transition-transform duration-700 group-hover:scale-105">
                                 {stat.value}
                             </span>
-                            <h3 className="mt-4 text-xl font-bold uppercase tracking-widest">
+                            <h3 className="mt-8 text-[10px] font-black uppercase tracking-[0.4em] text-white/40">
                                 {stat.label}
                             </h3>
-                            <p className="mt-1 text-gray-500 text-sm">
+                            <p className="mt-2 text-gray-500 text-xs font-medium uppercase tracking-widest">
                                 {stat.sub}
                             </p>
                         </motion.div>

@@ -14,7 +14,7 @@ const testimonials = [
         author: "Alex Chriss",
         title: "CEO, PayPal",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-80 hover:grayscale-0 hover:opacity-100 transition-all flex items-center justify-center grayscale ">
+            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
                 <Image src="/testimonial-logo/paypal.png" alt="PayPal" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -24,7 +24,7 @@ const testimonials = [
         author: "Mike Krzyzewski",
         title: "Duke University",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-80 hover:grayscale-0 hover:opacity-100 transition-all flex items-center justify-center grayscale ">
+            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
                 <Image src="/testimonial-logo/duke-university.svg" alt="Duke" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -34,7 +34,7 @@ const testimonials = [
         author: "Lt. Gen. VeraLinn “Dash” Jamieson, Ret.",
         title: "United States Air Force",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-80 hover:grayscale-0 hover:opacity-100 transition-all flex items-center justify-center grayscale ">
+            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
                 <Image src="/testimonial-logo/us-airforce.svg" alt="United States Air Force" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -44,7 +44,7 @@ const testimonials = [
         author: "Malaika Myers",
         title: "CHRO, Hyatt Hotels Corporation",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-80 hover:grayscale-0 hover:opacity-100 transition-all flex items-center justify-center grayscale ">
+            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
                 <Image src="/testimonial-logo/hyatt.png" alt="Hyatt" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -59,7 +59,7 @@ const testimonials = [
         author: "Stephanie Barksdale",
         title: "Tulane University",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-80 hover:grayscale-0 hover:opacity-100 transition-all flex items-center justify-center grayscale ">
+            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
                 <Image src="/testimonial-logo/tulane.svg" alt="Tulane" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -69,7 +69,7 @@ const testimonials = [
         author: "Thomas Fuchs",
         title: "VP, Market Analysis and Strategy Genentech",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-80 hover:grayscale-0 hover:opacity-100 transition-all flex items-center justify-center grayscale ">
+            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
                 <Image src="/testimonial-logo/genentech.png" alt="Genentech" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -79,7 +79,7 @@ const testimonials = [
         author: "Patty McCord",
         title: "Former Chief Talent Officer, Netflix",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-80 hover:grayscale-0 hover:opacity-100 transition-all flex items-center justify-center grayscale">
+            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
                 <Image src="/testimonial-logo/netflix.png" alt="Netflix" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -89,7 +89,7 @@ const testimonials = [
 export default function SpeakingTestimonials() {
     return (
         <section className="py-24 bg-background border-y border-foreground/5 overflow-hidden">
-            <div className="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6">
                 <Swiper
                     modules={[Pagination, Autoplay]}
                     spaceBetween={32}

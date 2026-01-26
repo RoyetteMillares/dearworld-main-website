@@ -17,13 +17,13 @@ const BentoCard = ({ title, description, className, theme, href }: BentoCardProp
             className={cn(
                 "group relative flex flex-col justify-between p-8 transition-all duration-500 hover:scale-[1.01]",
                 theme === "dark"
-                    ? "bg-black text-white hover:bg-zinc-900 border-2 border-transparent hover:border-[#FFB300]"
-                    : "bg-white text-black border-2 border-black hover:bg-[#FFB300] hover:border-black",
+                    ? "bg-black text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-black"
+                    : "bg-white text-black border-2 border-black hover:bg-black hover:text-white hover:border-white",
                 className
             )}
         >
             <div className="flex justify-between items-start">
-                <h3 className="text-3xl font-black tracking-tighter uppercase font-oswald md:text-5xl">
+                <h3 className="text-3xl font-black tracking-tighter uppercase md:text-5xl">
                     {title}
                 </h3>
                 <ArrowUpRight className={cn(
@@ -42,9 +42,9 @@ const BentoCard = ({ title, description, className, theme, href }: BentoCardProp
 export function BentoGrid() {
     return (
         <section className="bg-white px-4 py-20 md:px-8">
-            <div className="mx-auto max-w-7xl">
+            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6">
                 <div className="mb-12">
-                    <h2 className="text-5xl font-bold tracking-tight text-black md:text-7xl">
+                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-black">
                         The Methods
                     </h2>
                 </div>

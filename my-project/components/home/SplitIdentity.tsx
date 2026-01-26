@@ -30,7 +30,7 @@ export function SplitIdentity() {
                 href="/solutions"
                 className="group relative flex w-full flex-col items-center justify-center bg-black px-8 py-24 text-center text-white transition-all duration-700 md:w-1/2 hover:z-10"
             >
-                <div className="absolute inset-0 bg-[#FFB300]/0 transition-colors duration-500 group-hover:bg-[#FFB300]/5" />
+                <div className="absolute inset-0 bg-white/0 transition-colors duration-500 group-hover:bg-white/5" />
 
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
@@ -39,8 +39,8 @@ export function SplitIdentity() {
                     transition={{ duration: 0.8 }}
                     className="relative max-w-md space-y-8"
                 >
-                    <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-500">Organizations</span>
-                    <h2 className="text-5xl font-black tracking-[-0.04em] uppercase md:text-7xl">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40">Organizations</span>
+                    <h2 className="text-5xl font-black tracking-tighter uppercase md:text-7xl">
                         Building <br />
                         <span className="text-white">Skills</span>
                     </h2>
@@ -50,7 +50,7 @@ export function SplitIdentity() {
                     <div className="pt-4">
                         <Button
                             size="lg"
-                            className="bg-white text-black hover:bg-[#FFB300] hover:text-black border-2 border-transparent hover:border-black h-16 px-10 text-xl font-bold uppercase tracking-wide transition-all duration-300"
+                            className="bg-white text-black hover:bg-black hover:text-white border-2 border-transparent hover:border-black h-16 px-10 text-xl font-black uppercase tracking-[0.2em] transition-all duration-300"
                         >
                             Explore Solutions <ArrowRight className="ml-2 h-6 w-6" />
                         </Button>
@@ -72,8 +72,8 @@ export function SplitIdentity() {
                     transition={{ duration: 0.8 }}
                     className="relative max-w-md space-y-8"
                 >
-                    <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-black/40">Communities</span>
-                    <h2 className="text-5xl font-black tracking-[-0.04em] uppercase md:text-7xl">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-black/40">Communities</span>
+                    <h2 className="text-5xl font-black tracking-tighter uppercase md:text-7xl">
                         Building <br />
                         <span className="text-white">Connection</span>
                     </h2>
@@ -83,7 +83,7 @@ export function SplitIdentity() {
                     <div className="pt-4">
                         <Button
                             size="lg"
-                            className="bg-black text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-black h-16 px-10 text-xl font-bold uppercase tracking-wide transition-all duration-300"
+                            className="bg-black text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-black h-16 px-10 text-xl font-black uppercase tracking-[0.2em] transition-all duration-300"
                         >
                             Visit Foundation <ArrowRight className="ml-2 h-6 w-6" />
                         </Button>

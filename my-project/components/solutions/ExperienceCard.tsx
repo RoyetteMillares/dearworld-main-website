@@ -46,10 +46,10 @@ export function ExperienceCard({
             {/* Content Side */}
             <div className="w-full md:w-1/2 space-y-8">
                 <div>
-                    <h2 className="text-4xl font-bold tracking-tight text-black md:text-5xl">
+                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-black">
                         {title}
                     </h2>
-                    <p className="mt-2 font-oswald text-xl uppercase tracking-wider text-black opacity-40">
+                    <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.4em] text-black/40">
                         {subtitle}
                     </p>
                 </div>
@@ -70,7 +70,7 @@ export function ExperienceCard({
                 </div>
 
                 <div className="pt-4">
-                    <Button variant="outline" className="border-2 border-black hover:bg-black hover:text-white h-14 px-8 text-lg font-bold uppercase tracking-wide">
+                    <Button variant="outline" className="border-2 border-black hover:bg-black hover:text-white h-14 px-8 text-lg font-black uppercase tracking-[0.2em]">
                         Learn More <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                 </div>
