@@ -13,9 +13,6 @@ export function Navbar() {
 
     return (
         <motion.nav
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 flex h-24 items-center transition-all duration-300 font-sans bg-black border-b border-white/10"
             )}

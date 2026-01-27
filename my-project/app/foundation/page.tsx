@@ -45,7 +45,7 @@ export default function FoundationPage() {
                         muted
                         loop
                         playsInline
-                        className="h-full w-full object-cover opacity-40 grayscale filter brightness-50 contrast-125"
+                        className="h-full w-full object-cover"
                     >
                         <source
                             src="https://vb-p.rmcdn1.net/5982064cff6797729c24848f/5e76b55e0c50570d5f90e27d/2dd2be9c-c5b4-4708-836d-88d4ccfa5b84.mp4"
@@ -135,15 +135,8 @@ export default function FoundationPage() {
                                 src="/katrina_portrait.jpg"
                                 alt="Original Journalistic Photography"
                                 fill
-                                className="object-cover grayscale group-hover:scale-105 transition-transform duration-[2s] opacity-80"
+                                className="object-cover"
                             />
-                            {/* Technical Overlay */}
-                            <div className="absolute top-10 right-10 bg-white text-black px-6 py-2 rotate-3 font-black uppercase text-[10px] tracking-[0.2em]">
-                                ACCESSION: DW-2005-KAT
-                            </div>
-                            <div className="absolute bottom-0 left-0 right-0 p-8 bg-linear-to-t from-black to-transparent">
-                                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60">Subject: First Message / NOLA</p>
-                            </div>
                         </div>
                     </div>
                 </div>

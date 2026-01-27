@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Scribble, HandDrawnCircle } from "@/components/ui/BrandAssets";
+import { Scribble } from "@/components/ui/BrandAssets";
 import { Quote } from "lucide-react";
 
 export function FeaturedVideo() {
@@ -15,9 +15,9 @@ export function FeaturedVideo() {
             </div>
 
             <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
-                <div className="flex flex-col lg:flex-row gap-24 lg:gap-32">
+                <div className="flex flex-col lg:flex-row gap-24 lg:gap-16 xl:gap-32 items-center">
                     {/* Left Content Column */}
-                    <div className="lg:w-5/12 space-y-16 relative">
+                    <div className="lg:w-1/2 space-y-16 relative">
                         {/* Background Quote Watermark */}
                         <Quote className="absolute -top-32 -left-20 w-64 h-64 text-white opacity-[0.03] pointer-events-none" />
 
@@ -29,7 +29,7 @@ export function FeaturedVideo() {
                                 </span>
                             </div>
 
-                            <h2 className="text-6xl md:text-8xl lg:text-[8vw] font-black uppercase tracking-tighter text-white leading-[0.8]">
+                            <h2 className="text-6xl md:text-8xl lg:text-7xl xl:text-8xl 2xl:text-[7vw] font-black uppercase tracking-tighter text-white leading-[0.8]">
                                 HOW THE <br />
                                 <span className="relative inline-block">
                                     BRAIN
@@ -52,7 +52,7 @@ export function FeaturedVideo() {
                     </div>
 
                     {/* Right Media Column */}
-                    <div className="lg:w-7/12 w-full self-center">
+                    <div className="lg:w-1/2 w-full">
                         <div className="relative">
                             {/* Cinematic Frame */}
                             <motion.div
@@ -62,7 +62,7 @@ export function FeaturedVideo() {
                                 transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                                 className="relative aspect-video bg-zinc-900 overflow-hidden group z-20"
                             >
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/GrZKPan2xFs?si=Nz0BK253I87CbN83" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                                <iframe className="w-full h-full" src="https://www.youtube.com/embed/GrZKPan2xFs?si=Nz0BK253I87CbN83" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                             </motion.div>
 
 

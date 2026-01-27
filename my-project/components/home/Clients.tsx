@@ -34,14 +34,14 @@ const Logos = ({ interactive = true }: { interactive?: boolean }) => {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                                 className={cn(
-                                    "relative h-8 md:h-12 w-24 md:w-36 transition-all duration-700 flex items-center justify-center opacity-30 hover:opacity-100"
+                                    "relative h-8 md:h-12 w-24 md:w-36 transition-all duration-700 flex items-center justify-center"
                                 )}
                             >
                                 <Image
                                     src={logo.src}
                                     alt={logo.name}
                                     fill
-                                    className="object-contain grayscale hover:grayscale-0 transition-all duration-700"
+                                    className={`object-contain transition-all duration-700 ${logo.name === "MSNBC" ? "invert" : ""}`}
                                 />
                             </motion.div>
                         );
