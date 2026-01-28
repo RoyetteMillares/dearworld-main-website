@@ -142,6 +142,81 @@ export default function FoundationPage() {
                 </div>
             </section>
 
+            {/* Newtown Anniversary Section - Featured Story */}
+            <section className="py-24 md:py-48 bg-black relative border-b border-white/5">
+                <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6">
+                    <div className="flex flex-col lg:flex-row-reverse gap-24 items-center">
+                        <div className="lg:w-1/2 space-y-12">
+                            <motion.div
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                                className="space-y-12"
+                            >
+                                <div className="inline-block py-1.5 px-6 border border-white/20 text-white rounded-full">
+                                    <span className="text-[9px] font-black uppercase tracking-[0.4em]">Featured Project // 10th Anniversary</span>
+                                </div>
+
+                                <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.85]">
+                                    Dear World: <br />
+                                    <span className="relative inline-block italic text-white/40">
+                                        Newtown.
+                                        <Scribble variant="17" className="-bottom-12 left-0 w-full h-24 grayscale opacity-20" />
+                                    </span>
+                                </h2>
+
+                                <p className="text-2xl md:text-3xl font-medium leading-tight text-gray-400">
+                                    Ten student survivors participate in the Portrait Process by Dear World to mark the 10th anniversary of the Sandy Hook shooting.
+                                </p>
+
+                                <div className="pt-8">
+                                    <a
+                                        href="https://www.newtown.dearworld.org/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group inline-flex items-center gap-6 text-xs font-black uppercase tracking-[0.5em] text-white hover:text-white/60 transition-all"
+                                    >
+                                        <span className="border-b-2 border-white pb-1 group-hover:border-white/40 transition-all">
+                                            READ AND WATCH HERE
+                                        </span>
+                                        <ExternalLink className="w-5 h-5" />
+                                    </a>
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        <div className="lg:w-1/2 w-full">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+                                className="relative aspect-video bg-zinc-900 overflow-hidden"
+                            >
+                                <Image
+                                    src="/brand-assets/newtown-hero.png"
+                                    alt="Dear World: Newtown"
+                                    fill
+                                    className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
+                                    onError={(e) => {
+                                        // Fallback if image doesn't exist yet, using a placeholder or keeping it dark
+                                        (e.target as any).style.display = 'none';
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
+                                {/* Play Button Aesthetic */}
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="w-24 h-24 border border-white/20 rounded-full flex items-center justify-center backdrop-blur-sm group-hover:scale-110 transition-transform duration-500">
+                                        <div className="w-0 h-0 border-t-12 border-t-transparent border-l-20 border-l-white border-b-12 border-b-transparent ml-2" />
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Impact Grid - Asymmetric Editorial Layout */}
             <section className="py-24 md:py-48 bg-black">
                 <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6">
