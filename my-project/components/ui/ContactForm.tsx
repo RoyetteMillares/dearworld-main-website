@@ -29,7 +29,7 @@ const ContactForm = () => {
         eventLocation: '',
         eventDate: undefined as Date | undefined,
         budget: '',
-        subject: 'General Inquiry',
+        subject: '',
         message: ''
     });
 
@@ -45,11 +45,11 @@ const ContactForm = () => {
     };
 
     const handleSelectChange = (value: string) => {
-        setFormData({ ...formData, subject: value });
+        setFormData({ ...formData, subject: value === '_reset' ? '' : value });
     };
 
     const handleBudgetChange = (value: string) => {
-        setFormData({ ...formData, budget: value });
+        setFormData({ ...formData, budget: value === '_reset' ? '' : value });
     };
 
     const router = useRouter();
@@ -110,8 +110,8 @@ const ContactForm = () => {
         }
     };
 
-    const inputClasses = "w-full bg-black border border-white/20 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-transparent transition-all disabled:opacity-50 placeholder:text-white/20";
-    const labelClasses = "text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 mb-1 block";
+    const inputClasses = "w-full bg-white border border-transparent rounded-lg px-4 py-3 text-black font-bold focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-transparent transition-all disabled:opacity-50 placeholder:text-gray-400";
+    const labelClasses = "text-[10px] font-bold uppercase tracking-[0.4em] text-white mb-1 block";
 
     return (
         <motion.form
@@ -171,7 +171,11 @@ const ContactForm = () => {
                     <ContactSelect
                         value={formData.subject}
                         onValueChange={handleSelectChange}
-                        options={INQUIRY_OPTIONS}
+                        options={[
+                            { value: "_reset", label: "Select Inquiry Type" },
+                            ...INQUIRY_OPTIONS.filter(opt => opt.value !== "")
+                        ]}
+                        placeholder="Select Inquiry Type"
                         disabled={isPending}
                     />
                 </motion.div>
@@ -209,6 +213,7 @@ const ContactForm = () => {
                     onValueChange={handleBudgetChange}
                     placeholder="Select budget range"
                     options={[
+                        { value: "_reset", label: "Select budget range" },
                         { value: 'Under $5,000', label: 'Under $5,000' },
                         { value: '$5,000 - $10,000', label: '$5,000 - $10,000' },
                         { value: '$10,000 - $25,000', label: '$10,000 - $25,000' },

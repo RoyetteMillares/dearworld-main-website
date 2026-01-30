@@ -28,14 +28,14 @@ export function ContactDatePicker({ date, onChange, placeholder = 'Pick a date',
                     type="button"
                     disabled={disabled}
                     className={cn(
-                        "w-full bg-black border border-white/20 rounded-lg px-4 py-3 text-left font-medium flex items-center justify-between transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent",
-                        !date && "text-white/40",
+                        "w-full bg-white border border-transparent rounded-lg px-4 py-3 text-left font-bold flex items-center justify-between transition-all focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-transparent text-black",
+                        !date && "text-gray-400",
                         disabled && "opacity-50 cursor-not-allowed",
-                        isOpen && "ring-2 ring-primary border-transparent"
+                        isOpen && "ring-2 ring-black/10 border-transparent"
                     )}
                 >
-                    <span className="flex items-center gap-2 text-white/90">
-                        <CalendarIcon className="w-4 h-4 text-white/40" />
+                    <span className="flex items-center gap-2">
+                        <CalendarIcon className="w-4 h-4 text-gray-400" />
                         {date ? format(date, "PPP") : <span>{placeholder}</span>}
                     </span>
                     {date && !disabled && (
@@ -44,9 +44,9 @@ export function ContactDatePicker({ date, onChange, placeholder = 'Pick a date',
                                 e.stopPropagation();
                                 onChange(undefined);
                             }}
-                            className="hover:bg-white/10 rounded-full p-0.5 transition-colors"
+                            className="hover:bg-black/5 rounded-full p-0.5 transition-colors"
                         >
-                            <X className="w-3.5 h-3.5 text-white/40" />
+                            <X className="w-3.5 h-3.5 text-gray-400" />
                         </span>
                     )}
                 </button>
@@ -59,7 +59,7 @@ export function ContactDatePicker({ date, onChange, placeholder = 'Pick a date',
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="bg-black border border-white/10 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] p-4"
+                        className="bg-white border border-gray-100 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] p-4"
                     >
                         <DayPicker
                             mode="single"
@@ -75,45 +75,7 @@ export function ContactDatePicker({ date, onChange, placeholder = 'Pick a date',
                 </Popover.Content>
             </Popover.Portal>
 
-            <style jsx global>{`
-                .contact-rdp {
-                    --rdp-cell-size: 40px;
-                    --rdp-accent-color: #ffffff;
-                    --rdp-background-color: #ffffff;
-                    --rdp-accent-color-foreground: #000000;
-                    margin: 0;
-                    color: white !important;
-                }
-                .contact-rdp .rdp-day {
-                    color: white !important;
-                    font-weight: 500;
-                }
-                .contact-rdp .rdp-day_selected {
-                    background-color: white !important;
-                    color: black !important;
-                    border-radius: 8px;
-                }
-                .contact-rdp .rdp-day:hover:not(.rdp-day_selected) {
-                    background-color: rgba(255, 255, 255, 0.1) !important;
-                    border-radius: 8px;
-                }
-                .contact-rdp .rdp-head_cell {
-                    font-size: 0.75rem;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    color: rgba(255, 255, 255, 0.4);
-                    padding-bottom: 0.5rem;
-                }
-                .contact-rdp .rdp-month_caption {
-                    font-weight: 700;
-                    font-size: 0.95rem;
-                    color: white !important;
-                    margin-bottom: 1rem;
-                }
-                .contact-rdp .rdp-nav_button {
-                    color: white !important;
-                }
-            `}</style>
+
         </Popover.Root>
     );
 }

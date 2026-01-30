@@ -127,3 +127,48 @@
   transition: all 0.3s ease;
   margin: 0 4px !important;
 }
+
+/* Contact DatePicker Styles */
+.contact-rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #000000;
+  --rdp-background-color: #000000;
+  --rdp-accent-color-foreground: #ffffff;
+  margin: 0;
+  color: black !important;
+}
+
+.contact-rdp .rdp-day {
+  color: black !important;
+  font-weight: 500;
+}
+
+.contact-rdp .rdp-day_selected {
+  background-color: black !important;
+  color: white !important;
+  border-radius: 8px;
+}
+
+.contact-rdp .rdp-day:hover:not(.rdp-day_selected) {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 8px;
+}
+
+.contact-rdp .rdp-head_cell {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+  padding-bottom: 0.5rem;
+}
+
+.contact-rdp .rdp-month_caption {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: black !important;
+  margin-bottom: 1rem;
+}
+
+.contact-rdp .rdp-nav_button {
+  color: black !important;
+}

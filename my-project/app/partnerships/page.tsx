@@ -3,8 +3,8 @@
 import { PartnershipHero } from "@/components/partnerships/PartnershipHero";
 import { PartnershipPathways } from "@/components/partnerships/PartnershipPathways";
 import { PartnershipROI } from "@/components/partnerships/PartnershipROI";
-import { PartnershipMetrics } from "@/components/partnerships/PartnershipMetrics";
 import { PartnershipCTA } from "@/components/partnerships/PartnershipCTA";
+import { PartnershipFAQ } from "@/components/partnerships/PartnershipFAQ";
 
 export default function PartnershipsPage() {
     return (
@@ -12,7 +12,7 @@ export default function PartnershipsPage() {
             <PartnershipHero />
             <PartnershipPathways />
             <PartnershipROI />
-            <PartnershipMetrics />
+            <PartnershipFAQ />
             <PartnershipCTA />
         </div>
     );

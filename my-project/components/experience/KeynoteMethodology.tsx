@@ -1,68 +1,104 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
-import { Card } from "@/components/ui/card";
+import { Scribble } from "@/components/ui/BrandAssets";
+import { ArrowRight, Brain, Camera, Heart, Users } from "lucide-react";
 
-const METHODS = [
+const BENEFITS = [
     {
-        title: "The Brain Tattoo Method™",
-        meta: "Our Signature Experience",
-        desc: "A singular phrase that represents your most important message. We provide the framework to find it, own it, and share it.",
-        theme: "dark"
+        icon: <Brain className="w-6 h-6" />,
+        title: "Visual Storytelling",
+        desc: "Transform abstract values into a concrete visual anchor."
     },
     {
-        title: "The Portrait Process™",
-        meta: "Photography Meets Storytelling",
-        desc: "Participants interview and photograph one another, resulting in powerful images that reveal their singular message to the world.",
-        theme: "light"
+        icon: <Heart className="w-6 h-6" />,
+        title: "Authentic Connection",
+        desc: "Move beyond small talk to deep, meaningful exchange."
+    },
+    {
+        icon: <Users className="w-6 h-6" />,
+        title: "Team Bonding",
+        desc: "Create psychological safety through shared vulnerability."
+    },
+    {
+        icon: <Camera className="w-6 h-6" />,
+        title: "Perspective Shifting",
+        desc: "See colleagues as complete humans, not just titles."
     }
 ];
 
 export function KeynoteMethodology() {
     return (
-        <section className="bg-white border-t-2 border-black">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-                {METHODS.map((method, i) => (
-                    <div
-                        key={i}
-                        className={cn(
-                            "relative p-12 md:p-24 flex flex-col justify-center min-h-[60vh] border-black",
-                            method.theme === "dark" ? "bg-black text-white" : "bg-white text-black border-t-2 md:border-t-0 md:border-l-2"
-                        )}
+        <section className="bg-white border-t-2 border-black overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen">
+                {/* Left Column: The Editorial Hook */}
+                <div className="lg:col-span-5 bg-black text-white p-12 md:p-24 flex flex-col justify-center relative border-r-2 border-black">
+                    {/* Background Texture */}
+                    <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
+
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                        className="relative z-10"
                     >
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <span className={cn(
-                                "text-[10px] font-black uppercase tracking-[0.4em] mb-8 block",
-                                method.theme === "dark" ? "text-white/40" : "text-black/40"
-                            )}>
-                                {method.meta}
+                        <div className="inline-block py-1 px-3 border border-white/20 rounded-full mb-12">
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60">
+                                The Method
                             </span>
+                        </div>
 
-                            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-8">
-                                {method.title}
-                            </h2>
+                        <h2 className="text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.85] tracking-tighter mb-12">
+                            The <br />
+                            <span className="text-white/40">Brain</span> <br />
+                            <span className="relative inline-block">
+                                Tattoo™
+                                <Scribble variant="17" className="-bottom-6 left-0 w-full h-12 text-[#FFB300] opacity-100" />
+                            </span>
+                        </h2>
 
-                            <p className={cn(
-                                "text-xl md:text-2xl font-medium leading-[1.2] max-w-md",
-                                method.theme === "dark" ? "text-gray-400" : "text-gray-600"
-                            )}>
-                                {method.desc}
+                        <p className="text-xl md:text-2xl font-medium text-white/60 leading-relaxed max-w-md">
+                            We don't just tell stories. We find the <span className="text-white font-bold">one story</span> that explains who you are.
+                        </p>
+                    </motion.div>
+                </div>
+
+                {/* Right Column: High-Density Content */}
+                <div className="lg:col-span-7 bg-white text-black p-12 md:p-24 flex flex-col justify-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="space-y-16"
+                    >
+                        <div>
+                            <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+                                A framework for <br />
+                                <span className="text-black/30">unforgettable</span> impact.
+                            </h3>
+                            <p className="text-lg md:text-xl font-medium leading-relaxed max-w-2xl text-black/70">
+                                The Brain Tattoo Method™ is a proprietary storytelling framework that helps individuals distill their life experiences into a singular message. It's not just an exercise; it's a recalibration of how teams connect.
                             </p>
-                        </motion.div>
+                        </div>
 
-                        {/* Brutalist Stripe Accent */}
-                        <div className={cn(
-                            "absolute bottom-0 left-0 h-4 w-full",
-                            method.theme === "dark" ? "bg-white opacity-10" : "bg-black opacity-10"
-                        )} />
-                    </div>
-                ))}
+                        {/* Benefits Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/10 border border-black/10">
+                            {BENEFITS.map((item, i) => (
+                                <div key={i} className="bg-white p-8 hover:bg-black/5 transition-colors duration-300 group">
+                                    <div className="mb-6 p-3 bg-black text-white w-fit group-hover:bg-[#FFB300] group-hover:text-black transition-colors">
+                                        {item.icon}
+                                    </div>
+                                    <h4 className="text-lg font-black uppercase tracking-tight mb-2">{item.title}</h4>
+                                    <p className="text-sm font-medium text-black/60 leading-relaxed">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

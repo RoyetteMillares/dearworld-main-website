@@ -21,17 +21,18 @@ export function ContactSelect({ value, onValueChange, placeholder = 'Select an o
         <Select.Root value={value} onValueChange={onValueChange} open={isOpen} onOpenChange={setIsOpen} disabled={disabled}>
             <Select.Trigger
                 className={cn(
-                    "w-full bg-black border border-white/20 rounded-lg px-4 py-3 text-left font-medium flex items-center justify-between transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent",
-                    !value && "text-white/40",
+                    "w-full bg-white border border-transparent rounded-lg px-4 py-3 text-left font-bold flex items-center justify-between transition-all focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-transparent text-black",
+                    !value && "text-gray-400",
                     disabled && "opacity-50 cursor-not-allowed",
-                    isOpen && "ring-2 ring-primary border-transparent"
+                    isOpen && "ring-2 ring-black/10 border-transparent"
                 )}
             >
+
                 <Select.Value placeholder={placeholder}>
                     {value ? options.find(o => o.value === value)?.label : placeholder}
                 </Select.Value>
                 <Select.Icon>
-                    <ChevronDown className={cn("w-5 h-5 text-white/40 transition-transform duration-200", isOpen && "rotate-180")} />
+                    <ChevronDown className={cn("w-5 h-5 text-gray-400 transition-transform duration-200", isOpen && "rotate-180")} />
                 </Select.Icon>
             </Select.Trigger>
 
@@ -39,7 +40,7 @@ export function ContactSelect({ value, onValueChange, placeholder = 'Select an o
                 <Select.Content
                     position="popper"
                     sideOffset={8}
-                    className="z-50 min-w-(--radix-select-trigger-width) bg-black border border-white/10 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] overflow-hidden outline-none"
+                    className="z-50 min-w-(--radix-select-trigger-width) bg-white border border-gray-100 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] overflow-hidden outline-none"
                     asChild
                 >
                     <motion.div
@@ -53,7 +54,7 @@ export function ContactSelect({ value, onValueChange, placeholder = 'Select an o
                                 <Select.Item
                                     key={option.value}
                                     value={option.value}
-                                    className="relative flex items-center px-8 py-2.5 text-sm font-medium text-white/70 rounded-lg cursor-pointer outline-none select-none hover:bg-white hover:text-black transition-colors data-disabled:opacity-50 data-disabled:pointer-events-none"
+                                    className="relative flex items-center px-8 py-2.5 text-sm font-bold text-black rounded-lg cursor-pointer outline-none select-none hover:bg-black hover:text-white transition-colors data-disabled:opacity-50 data-disabled:pointer-events-none"
                                 >
                                     <Select.ItemText>{option.label}</Select.ItemText>
                                     <Select.ItemIndicator className="absolute left-2 flex items-center justify-center">

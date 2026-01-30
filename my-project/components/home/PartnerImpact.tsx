@@ -43,7 +43,7 @@ export function PartnerImpact() {
                             <div className="inline-block py-1 px-3 bg-black text-white mb-12">
                                 <span className="font-black uppercase tracking-[0.4em] text-[10px]">Case Study / Impact</span>
                             </div>
-                            <h2 className="text-6xl md:text-8xl lg:text-[7vw] font-black uppercase tracking-tighter leading-[0.75]">
+                            <h2 className="text-5xl md:text-7xl lg:text-[6vw] font-black uppercase tracking-tighter leading-[0.85] md:leading-[0.8] wrap-break-word">
                                 Partnerships that <br />
                                 <span className="text-black/30">transform</span> <br />
                                 systems.

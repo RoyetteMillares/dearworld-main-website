@@ -16,26 +16,24 @@ export function Hero() {
     return (
         <section className="relative h-screen w-full overflow-hidden bg-black text-white">
             {/* Background Video - Cinematic Atmosphere */}
-            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none scale-110">
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
                 <iframe
                     src="https://www.youtube.com/embed/IE40JUB1lfA?autoplay=1&mute=1&loop=1&playlist=IE40JUB1lfA&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1"
-                    className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 aspect-video object-cover"
-                    frameBorder="0"
+                    className="absolute min-w-full min-h-full object-cover aspect-video"
+
                     allow="autoplay; fullscreen"
                 />
                 <Image
-                    src="/hero_portrait.png"
-                    alt=""
+                    src="/hero-video.png"
+                    alt="Background Image"
                     fill
-                    className="object-cover object-[50%_20%] -z-10"
+                    className="object-cover object-center -z-10"
                 />
-                {/* Editorial Overlay */}
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute inset-0 bg-linear-to-b from-black/80 via-transparent to-black" />
+
             </div>
 
 
-            <div className="relative z-10 flex h-full flex-col items-center justify-center w-full max-w-[1400px] mx-auto px-4 md:px-6 text-center">
+            <div className="relative hidden z-10 flex h-full flex-col items-center justify-center w-full max-w-[1400px] mx-auto px-4 md:px-6 text-center">
                 <motion.span
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

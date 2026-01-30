@@ -11,11 +11,13 @@ import {
     DialogHeader,
     DialogTitle,
     DialogTrigger,
+    DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle, CardContent } from "@/components/ui/card";
 
 import Image from "next/image";
+import { X } from "lucide-react";
 
 interface MethodCardProps {
     title: string;
@@ -100,8 +102,9 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                     )}
                 >
                     {/* Cinematic Ambient Background */}
-                    <div className="absolute inset-0 z-0">
-                        <div className="absolute inset-0 z-10 bg-black/60 transition-colors duration-500 group-hover:bg-black/40" />
+                    <div className="absolute inset-0 z-0 text-clip">
+                        <div className="absolute inset-0 z-10 bg-black/40 transition-colors duration-500 group-hover:bg-black/20" />
+                        <div className="absolute inset-x-0 bottom-0 top-1/2 z-10 bg-linear-to-t from-black/90 via-black/50 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
 
                         {renderMedia(false)}
                     </div>
@@ -114,7 +117,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
                             <div className="mb-4 flex items-center justify-between">
-                                <CardTitle className="text-6xl font-black uppercase tracking-tighter text-white md:text-7xl lg:text-8xl leading-[0.85] md:leading-[0.8]">
+                                <CardTitle className="text-6xl font-black uppercase tracking-tighter text-white md:text-7xl lg:text-8xl leading-[0.85] md:leading-[0.8] drop-shadow-lg">
                                     {title.split(' ').map((word, i) => (
                                         <span key={i} className="block group-hover:text-white transition-colors duration-500">
                                             {word}
@@ -126,7 +129,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                 </div>
                             </div>
 
-                            <p className="max-w-xs text-lg font-medium leading-relaxed text-gray-300 opacity-60 transition-all duration-500 group-hover:opacity-100 md:text-xl">
+                            <p className="max-w-xs text-lg font-medium leading-relaxed text-gray-300 opacity-60 transition-all duration-500 group-hover:opacity-100 md:text-xl drop-shadow-md">
                                 {description}
                             </p>
                         </motion.div>
@@ -145,7 +148,14 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                 </Card>
             </DialogTrigger>
 
-            <DialogContent className="fixed top-0! left-0! translate-x-0! translate-y-0! w-full! h-dvh max-w-none! bg-black text-white p-0 overflow-hidden outline-none border-none shadow-none z-100">
+            <DialogContent showCloseButton={false} className="fixed top-0! left-0! translate-x-0! translate-y-0! w-full! h-dvh max-w-none! bg-black text-white p-0 overflow-hidden outline-none border-none shadow-none z-100">
+                <DialogClose className="absolute top-8 right-8 z-60 group p-2 rounded-full bg-black/20 hover:bg-white/20 backdrop-blur-md transition-all duration-300">
+                    <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
+                        <X className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <span className="sr-only">Close</span>
+                </DialogClose>
+
                 <div className="flex flex-col h-full w-full overflow-y-auto scrollbar-hide">
                     {/* Modal Top: Video/Image Full Bleed */}
                     <div className="relative w-full aspect-video shrink-0 bg-zinc-900 border-b border-white/5">
@@ -256,7 +266,7 @@ export function Methods() {
 
                 <MethodCard
                     index={1}
-                    videoSrc="https://player.vimeo.com/video/1028996468?h=ccd6086897&badge=0&autoplay=1&loop=1&muted=1&background=1&controls=0&playsinline=1&autopause=0"
+                    videoSrc="https://player.vimeo.com/video/1057692815?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                     title="Prtrait Process"
                     description="Visual storytelling that captures the authentic self."
                     longDescription="More than just a photo. The Portrait Process is a transformative experience where individuals are seen for their authentic truths, creating a visual library of shared humanity."
@@ -270,7 +280,7 @@ export function Methods() {
 
                 <MethodCard
                     index={2}
-                    imageSrc="/assets/loyl.jpg"
+                    videoSrc="https://player.vimeo.com/video/593509917?h=09c54eebcb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                     title="Loyl Leaders"
                     description="Executive coaching for specific leadership narratives."
                     longDescription="Helping high-stakes leaders refine their personal narrative. LOYL (Love of Your Life) focuses on the core motivations that drive world-class leadership and decision-making."

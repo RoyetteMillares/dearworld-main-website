@@ -1,68 +1,72 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
-import { Users, Zap, MessageSquare } from "lucide-react";
 
 const OFFERINGS = [
     {
+        id: "01",
+        meta: "2 retreats per year",
         title: "Two Immersive Retreats",
-        desc: "Hosted at iconic Dear World spaces, these retreats are designed to strip away the noise and focus on pure storytelling and connection.",
-        icon: <Users className="w-8 h-8" />,
-        tag: "In-Person Exposure"
+        subtitle: "At Iconic Dear World Spaces",
+        description: "Exclusive access to The Mary Beth Hotel in New Orleans and House of Rhythm & Greens in Salt Lake City. Send up to 12 leaders for transformative experiences blending leadership coaching, storytelling training, and curated moments of belonging."
     },
     {
+        id: "02",
+        meta: "1 event per year",
         title: "External Event Leadership",
-        desc: "Robert X. Fogarty leads and amplifies your purpose at key external events, ensuring your message resonates globally.",
-        icon: <Zap className="w-8 h-8" />,
-        tag: "Global Amplification"
+        subtitle: "Led by Robert X. Fogarty",
+        description: "Bring Dear World to your people — anywhere in the world. Robert will craft and deliver a tailored storytelling experience for your team, clients, or community, designed to amplify your purpose and inspire action."
     },
     {
+        id: "03",
+        meta: "Ongoing coaching",
         title: "Executive Coaching",
-        desc: "Private one-on-one sessions focused on individual narrative development and authentic leadership presence.",
-        icon: <MessageSquare className="w-8 h-8" />,
-        tag: "Narrative Mastery"
+        subtitle: "Private Sessions with Robert X. Fogarty",
+        description: "One executive receives ongoing leadership and storytelling coaching directly with Robert. Deep dives into leadership challenges, vision alignment, and narrative mastery designed to help you lead with clarity and impact."
     }
 ];
 
 export function ClubOfferings() {
     return (
-        <section className="bg-black text-white py-32 md:py-64 border-b border-white/5">
-            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6">
-                <div className="mb-32 space-y-8">
-                    <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/40 italic">Exclusive Delivery</span>
-                    <h2 className="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.8] text-white">
-                        Beyond Traditional <br />
-                        <span className="text-white/20">Programs.</span>
+        <section className="bg-black text-white py-24 md:py-48">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="mb-24 md:mb-32">
+                    <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8">
+                        What You <br /> Receive
                     </h2>
+                    <p className="text-xl md:text-2xl text-white/60 max-w-2xl">
+                        Three transformative components designed to elevate your leadership team and organizational culture
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {OFFERINGS.map((offering, i) => (
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-16">
+                    {OFFERINGS.map((offer, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: i * 0.1 }}
-                            viewport={{ once: true }}
-                            className="p-12 border border-white/5 bg-zinc-900/50 hover:bg-zinc-900/80 transition-all duration-500 flex flex-col justify-between min-h-[500px]"
+                            transition={{ delay: i * 0.2, duration: 1 }}
+                            className="group relative border-t-2 border-white pt-8"
                         >
-                            <div className="space-y-12">
-                                <div className="w-16 h-16 border border-[#FFB300]/20 flex items-center justify-center text-[#FFB300]">
-                                    {offering.icon}
-                                </div>
-                                <div className="space-y-6">
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-[#FFB300]/60">{offering.tag}</span>
-                                    <h3 className="text-4xl font-black uppercase tracking-tighter leading-none">{offering.title}</h3>
-                                    <p className="text-lg text-gray-400 font-medium leading-relaxed">
-                                        {offering.desc}
-                                    </p>
-                                </div>
+                            <div className="flex justify-between items-start mb-12">
+                                <span className="text-4xl md:text-6xl font-black text-white/20 group-hover:text-[#FFB300] transition-colors duration-500">
+                                    {offer.id}
+                                </span>
+                                <span className="text-[10px] font-black uppercase tracking-[0.2em] border border-white/20 px-3 py-1 rounded-full">
+                                    {offer.meta}
+                                </span>
                             </div>
 
-                            <div className="text-[9px] font-mono text-white/20 mt-12">
-                                DW_SINCERELY_OFFERING_0{i + 1}
-                            </div>
+                            <h3 className="text-3xl md:text-4xl font-black italic mb-2 group-hover:translate-x-2 transition-transform duration-500">
+                                {offer.title}
+                            </h3>
+                            <p className="text-sm font-bold uppercase tracking-widest text-[#FFB300] mb-8">
+                                {offer.subtitle}
+                            </p>
+
+                            <p className="text-lg md:text-xl text-gray-400 leading-relaxed">
+                                {offer.description}
+                            </p>
                         </motion.div>
                     ))}
                 </div>
