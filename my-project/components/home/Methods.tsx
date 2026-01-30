@@ -38,14 +38,16 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
         if (isVimeo) {
             return (
                 <div className={cn(
-                    "absolute inset-0 h-full w-full overflow-hidden pointer-events-none",
-                    !isModal && "opacity-40 transition-all duration-[2s] group-hover:scale-110 group-hover:opacity-60"
+                    "absolute inset-0 h-full w-full overflow-hidden",
+                    !isModal && "pointer-events-none opacity-40 transition-all duration-[2s] group-hover:scale-110 group-hover:opacity-60"
                 )}>
                     <iframe
-                        src={`${videoSrc}${videoSrc?.includes('?') ? '&' : '?'}background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&playsinline=1`}
-                        className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 aspect-video"
+                        src={`${videoSrc}${videoSrc?.includes('?') ? '&' : '?'}${isModal ? "autoplay=1&title=0&byline=0&portrait=0&badge=0" : "background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&playsinline=1"}`}
+                        className={cn(
+                            isModal ? "w-full h-full" : "absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 aspect-video"
+                        )}
                         frameBorder="0"
-                        allow="autoplay; fullscreen"
+                        allow="autoplay; fullscreen; picture-in-picture"
                     />
                 </div>
             );
@@ -56,7 +58,8 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                 <video
                     autoPlay
                     loop
-                    muted
+                    muted={!isModal}
+                    controls={isModal}
                     playsInline
                     className={cn(
                         "h-full w-full object-cover",
@@ -143,18 +146,17 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
             </DialogTrigger>
 
             <DialogContent className="fixed top-0! left-0! translate-x-0! translate-y-0! w-full! h-dvh max-w-none! bg-black text-white p-0 overflow-hidden outline-none border-none shadow-none z-100">
-                <div className="flex flex-col lg:flex-row h-full w-full overflow-y-auto scrollbar-hide">
-                    {/* Modal Left: Video/Image Teaser */}
-                    <div className="relative w-full lg:w-1/2 min-h-[50vh] lg:min-h-full bg-zinc-900 border-b lg:border-b-0 lg:border-r border-white/5">
+                <div className="flex flex-col h-full w-full overflow-y-auto scrollbar-hide">
+                    {/* Modal Top: Video/Image Full Bleed */}
+                    <div className="relative w-full aspect-video shrink-0 bg-zinc-900 border-b border-white/5">
                         {renderMedia(true)}
-                        {/* Gradient overlays to blend with the black background */}
-                        <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-black to-transparent lg:hidden" />
-                        <div className="absolute inset-y-0 right-0 w-48 bg-linear-to-r from-transparent to-black hidden lg:block" />
+                        {/* Gradient overlay to blend with the content below */}
+                        <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-black to-transparent" />
                     </div>
 
-                    {/* Modal Right: Detailed Content */}
-                    <div className="w-full lg:w-1/2 px-12 py-24 md:px-20 md:py-32 lg:px-32 lg:py-48 flex flex-col justify-center bg-black relative">
-                        <div className="max-w-2xl mx-auto lg:mx-0">
+                    {/* Modal Bottom: Detailed Content */}
+                    <div className="w-full px-6 py-16 md:px-20 md:py-24 lg:px-32 lg:py-32 flex flex-col justify-center bg-black relative">
+                        <div className="max-w-4xl mx-auto">
                             <DialogHeader>
                                 <motion.div
                                     initial={{ opacity: 0, x: -20 }}
@@ -165,13 +167,13 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                         Deep Dive
                                     </span>
                                 </motion.div>
-                                <DialogTitle className="text-6xl md:text-6xl lg:text-7xl font-black uppercase tracking-[-0.04em] mt-6 text-white leading-[0.85] wrap-break-word">
+                                <DialogTitle className="text-5xl md:text-6xl lg:text-8xl font-black uppercase tracking-[-0.04em] mt-6 text-white leading-[0.85] wrap-break-word">
                                     {title}
                                 </DialogTitle>
                                 {/* Accessibility: Visually hidden description */}
                                 <div className="sr-only">
                                     Detailed information about {title}: {description}
-                                </div>
+                                </div >
                             </DialogHeader>
 
                             <motion.div
@@ -180,26 +182,26 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                 transition={{ delay: 0.2 }}
                                 className="mt-16 space-y-12"
                             >
-                                <p className="text-2xl md:text-2xl text-gray-400 leading-tight font-medium max-w-xl">
+                                <p className="text-xl md:text-2xl lg:text-3xl text-gray-400 leading-tight font-medium max-w-2xl">
                                     {longDescription}
                                 </p>
 
                                 <div className="flex flex-wrap gap-16 md:gap-24">
                                     {stats?.map((stat, i) => (
                                         <div key={i} className="space-y-2">
-                                            <p className="text-5xl md:text-6xl font-black text-white leading-none tracking-tighter">{stat.value}</p>
+                                            <p className="text-5xl md:text-7xl font-black text-white leading-none tracking-tighter">{stat.value}</p>
                                             <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/60">{stat.label}</p>
                                         </div>
                                     ))}
                                 </div>
 
-                                <ul className="space-y-2 pt-12 border-t border-white/5">
+                                <ul className="space-y-4 pt-12 border-t border-white/5">
                                     {[
                                         "Scientifically validated methodology",
                                         "Used by Fortune 500 leadership",
                                         "Scalable for global teams"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-6 text-lg font-medium text-gray-300">
+                                        <li key={i} className="flex items-center gap-6 text-lg md:text-xl font-medium text-gray-300">
                                             <div className="shrink-0 w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
                                                 <CheckCircle2 className="w-4 h-4 text-white" />
                                             </div>
@@ -213,7 +215,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 }}
-                                className="mt-20 flex flex-col sm:flex-row gap-6"
+                                className="mt-20 flex flex-col sm:flex-row gap-6 max-w-2xl"
                             >
                                 <Link href={href} className="flex-1">
                                     <Button className="w-full h-20 md:h-24 bg-white text-black border-2 border-white hover:bg-black hover:text-white transition-all duration-500 text-xl font-black uppercase tracking-[0.2em] rounded-none">
@@ -240,7 +242,7 @@ export function Methods() {
             <div className="grid grid-cols-1 md:grid-cols-3">
                 <MethodCard
                     index={0}
-                    videoSrc="https://player.vimeo.com/video/343367440?h=9935b4701a&badge=0&autoplay=1&loop=1&muted=1&background=1&controls=0&playsinline=1&autopause=0"
+                    videoSrc="https://player.vimeo.com/video/1058254816?h=69304c2099&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                     title="Brain Tattoo"
                     description="The psychological safety tool that builds high-performing teams."
                     longDescription="Our proprietary tool for building psychological safety. We help teams move past surface-level interactions to find the deep, authentic connection required for elite performance."
