@@ -24,10 +24,10 @@ export function Navbar() {
     }, [isMobileMenuOpen]);
 
     const navLinks = [
-        { href: "/solutions", label: "Solutions" },
-        { href: "/keynote-experience", label: "Experience" },
+        // { href: "/solutions", label: "Solutions" },
+        { href: "/keynote-experience", label: "Keynote Speaking" },
         { href: "/partnerships", label: "Partnerships" },
-        { href: "/sincerely-club", label: "The Club" },
+        { href: "/sincerely-club", label: "The Sincerely Club" },
         { href: "/contact", label: "Contact" },
     ];
 
