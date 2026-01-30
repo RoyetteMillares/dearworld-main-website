@@ -14,7 +14,7 @@ const testimonials = [
         author: "Alex Chriss",
         title: "CEO, PayPal",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
+            <div className="h-8 md:h-12 w-auto relative flex items-center justify-center">
                 <Image src="/testimonial-logo/paypal.png" alt="PayPal" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -24,7 +24,7 @@ const testimonials = [
         author: "Mike Krzyzewski",
         title: "Duke University",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
+            <div className="h-8 md:h-12 w-auto relative flex items-center justify-center">
                 <Image src="/testimonial-logo/duke-university.svg" alt="Duke" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -34,7 +34,7 @@ const testimonials = [
         author: "Lt. Gen. VeraLinn “Dash” Jamieson, Ret.",
         title: "United States Air Force",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
+            <div className="h-8 md:h-12 w-auto relative flex items-center justify-center">
                 <Image src="/testimonial-logo/us-airforce.svg" alt="United States Air Force" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -44,7 +44,7 @@ const testimonials = [
         author: "Malaika Myers",
         title: "CHRO, Hyatt Hotels Corporation",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
+            <div className="h-8 md:h-12 w-auto relative flex items-center justify-center">
                 <Image src="/testimonial-logo/hyatt.png" alt="Hyatt" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -59,7 +59,7 @@ const testimonials = [
         author: "Stephanie Barksdale",
         title: "Tulane University",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
+            <div className="h-8 md:h-12 w-auto relative flex items-center justify-center">
                 <Image src="/testimonial-logo/tulane.svg" alt="Tulane" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -69,7 +69,7 @@ const testimonials = [
         author: "Thomas Fuchs",
         title: "VP, Market Analysis and Strategy Genentech",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
+            <div className="h-8 md:h-12 w-auto relative flex items-center justify-center">
                 <Image src="/testimonial-logo/genentech.png" alt="Genentech" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -79,7 +79,7 @@ const testimonials = [
         author: "Patty McCord",
         title: "Former Chief Talent Officer, Netflix",
         clientLogo: (
-            <div className="h-8 md:h-12 w-auto relative opacity-40 hover:opacity-100 transition-all flex items-center justify-center">
+            <div className="h-8 md:h-12 w-auto relative flex items-center justify-center">
                 <Image src="/testimonial-logo/netflix.png" alt="Netflix" width={140} height={40} className="object-contain" />
             </div>
         )
@@ -88,53 +88,70 @@ const testimonials = [
 
 export default function SpeakingTestimonials() {
     return (
-        <section className="py-24 bg-background border-y border-foreground/5 overflow-hidden">
-            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6">
+        <section className="py-32 md:py-64 bg-white text-black border-t-2 border-black overflow-hidden relative">
+            {/* Background Narrative Stamp */}
+            <div className="absolute top-0 right-4 opacity-[0.03] select-none pointer-events-none hidden lg:block">
+                <span className="text-[25vw] font-black uppercase tracking-tighter leading-none">VOICE</span>
+            </div>
+
+            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
+                <div className="mb-24 flex items-center gap-12">
+                    <div className="py-1 px-3 bg-black text-white">
+                        <span className="text-[10px] font-black uppercase tracking-[0.4em]">Testimonials / Impact</span>
+                    </div>
+                    <div className="h-0.5 grow bg-black/10"></div>
+                </div>
+
                 <Swiper
                     modules={[Pagination, Autoplay]}
                     spaceBetween={32}
                     slidesPerView={1}
                     autoHeight={true}
                     autoplay={{
-                        delay: 6000,
+                        delay: 8000,
                         disableOnInteraction: false,
                     }}
                     pagination={{
                         clickable: true,
-                        el: '.speaking-testimonial-pagination',
+                        el: '.testimonial-dots',
                     }}
                     className="w-full"
                 >
                     {testimonials.map((t, i) => (
                         <SwiperSlide key={i}>
-                            <div className="max-w-4xl mx-auto text-center relative flex flex-col items-center pb-12">
-                                <Quote className="w-12 h-12 text-foreground/20 mb-10" />
+                            <div className="max-w-6xl mx-auto text-left relative flex flex-col items-start pb-12">
+                                <Quote className="w-16 h-16 text-black/10 mb-12" />
 
-                                <blockquote className="text-3xl md:text-5xl font-black leading-[1.2] text-foreground mb-12">
+                                <blockquote className="text-4xl md:text-6xl lg:text-7xl font-black leading-[0.8] text-black mb-16 uppercase tracking-tighter">
                                     "{t.quote}"
                                 </blockquote>
 
-                                <div className="space-y-2 mb-10">
-                                    <cite className="not-italic text-sm md:text-base font-medium text-foreground/60">
-                                        {t.author}, {t.title}
-                                    </cite>
-                                </div>
+                                <div className="flex flex-col md:flex-row md:items-center gap-12 w-full pt-12 border-t-2 border-black/10">
+                                    <div className="space-y-1">
+                                        <cite className="not-italic text-lg font-black uppercase tracking-tight text-black">
+                                            {t.author}
+                                        </cite>
+                                        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-black/40">
+                                            {t.title}
+                                        </p>
+                                    </div>
 
-                                {/* Client Logo Area */}
-                                {
-                                    t.clientLogo && (
-                                        <div className="flex items-center gap-3 mb-10">
-                                            {t.clientLogo}
-                                        </div>
-                                    )
-                                }
+                                    {/* Client Logo Area */}
+                                    {
+                                        t.clientLogo && (
+                                            <div className="md:ml-auto">
+                                                {t.clientLogo}
+                                            </div>
+                                        )
+                                    }
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
 
-                {/* Pagination Dots */}
-                <div className="speaking-testimonial-pagination flex gap-2 justify-center mt-4"></div>
+                {/* Custom Brutalist Pagination */}
+                <div className="testimonial-dots flex gap-4 justify-start mt-12"></div>
             </div>
         </section>
     );

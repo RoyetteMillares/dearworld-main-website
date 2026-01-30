@@ -15,80 +15,112 @@ export function Hero() {
 
     return (
         <section className="relative h-screen w-full overflow-hidden bg-black text-white">
-            {/* Background Image - Editorial Moment */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-                <motion.div
-                    initial={{ scale: 1.1, filter: "contrast(1.1) brightness(1)" }}
-                    animate={{ scale: 1, filter: "contrast(1.1) brightness(0.6)" }}
-                    transition={{ duration: 10, ease: "easeOut" }}
-                    className="h-full w-full"
-                >
-                    <Image
-                        src="/hero_portrait.png"
-                        alt="Hero Portrait"
-                        fill
-                        className="object-cover object-[50%_20%]"
-                        priority
-                    />
-                </motion.div>
-                {/* Texture/Grain Overlay could go here */}
-                <div className="absolute inset-0 bg-linear-to-b from-black/60 via-transparent to-black" />
+            {/* Background Video - Cinematic Atmosphere */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none scale-110">
+                <iframe
+                    src="https://www.youtube.com/embed/IE40JUB1lfA?autoplay=1&mute=1&loop=1&playlist=IE40JUB1lfA&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1"
+                    className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 aspect-video object-cover"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen"
+                />
+                <Image
+                    src="/hero_portrait.png"
+                    alt=""
+                    fill
+                    className="object-cover object-[50%_20%] -z-10"
+                />
+                {/* Editorial Overlay */}
+                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-linear-to-b from-black/80 via-transparent to-black" />
             </div>
 
 
-            {/* <div className="relative z-10 flex h-full flex-col items-center justify-center w-full max-w-[1400px] mx-auto px-4 md:px-6 text-center">
+            <div className="relative z-10 flex h-full flex-col items-center justify-center w-full max-w-[1400px] mx-auto px-4 md:px-6 text-center">
                 <motion.span
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-[10px] font-black uppercase tracking-[0.5em] text-white/40 mb-8"
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    className="text-[10px] font-black uppercase tracking-[0.6em] text-white/50 mb-12"
                 >
-                    EST. 2009 — WORLDWIDE
+                    EST. 2009 — WORLDWIDE — DEAR WORLD
                 </motion.span>
+
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 >
-                    <h1 className="max-w-7xl text-[12vw] font-black leading-[0.8] tracking-[-0.05em] uppercase md:text-[10vw] lg:text-[8vw]">
-                        <span className="block">CULTURE</span>
-                        <span className="relative inline-block text-white">
-                            THAT
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-                                animate={{ opacity: showCircle ? 1 : 0, scale: showCircle ? 1 : 0.8, rotate: 0 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
+                    <h1 className="max-w-[95vw] text-[13vw] md:text-[11vw] lg:text-[10vw] font-black leading-[0.85] md:leading-[0.8] tracking-tighter uppercase italic">
+                        <span className="block overflow-hidden">
+                            <motion.span
+                                initial={{ y: "100%" }}
+                                animate={{ y: 0 }}
+                                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                                className="block"
                             >
-                                <HandDrawnCircle
-                                    variant="light"
-                                    className="-inset-x-12 -inset-y-8"
-                                />
-                            </motion.div>
+                                CULTURE
+                            </motion.span>
+                        </span>
+                        <span className="relative inline-block text-white overflow-hidden not-italic">
+                            <motion.span
+                                initial={{ y: "100%" }}
+                                animate={{ y: 0 }}
+                                transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                                className="block"
+                            >
+                                THAT
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                                    animate={{ opacity: showCircle ? 1 : 0, scale: showCircle ? 1 : 0.8, rotate: 0 }}
+                                    transition={{ duration: 0.8, ease: "easeOut" }}
+                                    className="absolute inset-x-[-20%] inset-y-[-20%] md:inset-x-[-40%] md:inset-y-[-40%] z-[-1]"
+                                >
+                                    <HandDrawnCircle
+                                        variant="light"
+                                        className="w-full h-full scale-125 md:scale-150 grayscale opacity-40"
+                                    />
+                                </motion.div>
+                            </motion.span>
                         </span>
                         <br />
-                        <span className="text-white">MATTERS.</span>
+                        <span className="text-white/20 block overflow-hidden not-italic">
+                            <motion.span
+                                initial={{ y: "100%" }}
+                                animate={{ y: 0 }}
+                                transition={{ duration: 1, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                                className="block"
+                            >
+                                MATTERS.
+                            </motion.span>
+                        </span>
                     </h1>
                 </motion.div>
-                <motion.p
+
+                <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.6 }}
-                    transition={{ duration: 1, delay: 1 }}
-                    className="mt-12 max-w-xl text-lg font-black uppercase tracking-[0.3em] text-white md:text-xl"
+                    transition={{ duration: 1, delay: 1.5 }}
+                    className="mt-16 flex flex-col items-center gap-6"
                 >
-                    Built on the power of storytelling.
-                </motion.p>
-            </div> */}
+                    <p className="max-w-xl text-xs font-black uppercase tracking-[0.4em] text-white">
+                        Built on the power of storytelling.
+                    </p>
+                    <div className="h-24 w-px bg-white/20 overflow-hidden">
+                        <motion.div
+                            animate={{ y: ["-100%", "100%"] }}
+                            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                            className="h-full w-full bg-white"
+                        />
+                    </div>
+                </motion.div>
+            </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-12 left-10 z-20 hidden md:flex flex-col items-start gap-4">
-                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 vertical-text origin-left rotate-90 translate-y-20">
-                    Keep Exploring
+            {/* Scroll Indicator - Redesigned for Brutalist style */}
+            <div className="absolute bottom-12 right-12 z-20 hidden md:flex flex-col items-end gap-2">
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">
+                    Scroll to Explore
                 </span>
-                <motion.div
-                    animate={{ height: [0, 60, 0], y: [0, 0, 60] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="w-px bg-white/20"
-                />
+                <div className="h-px w-12 bg-white/40" />
             </div>
         </section >
     );

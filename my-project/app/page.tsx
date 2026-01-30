@@ -14,13 +14,14 @@ export default function Home() {
     <>
       <Hero />
       <Logos />
+      <Foundation />
       <FeaturedVideo />
+      <SplitIdentity />
+
+      <Methods />
       <PartnerImpact />
       <Validator />
-      <SplitIdentity />
-      <Methods />
       <SpeakingTestimonials />
-      <Foundation />
       <FinalCTA />
     </>
   );

@@ -66,7 +66,7 @@ export function ExperienceEditorialCard({
                     </h2>
                     <Scribble
                         variant={scribbleVariant}
-                        className="-bottom-12 left-0 w-3/4 h-24 grayscale opacity-20 pointer-events-none"
+                        className="-bottom-12 left-0 w-3/4 h-24 opacity-100 pointer-events-none"
                     />
                 </div>
 

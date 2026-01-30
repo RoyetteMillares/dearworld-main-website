@@ -13,6 +13,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Card, CardTitle, CardContent } from "@/components/ui/card";
 
 import Image from "next/image";
 
@@ -89,9 +90,9 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-                <div
+                <Card
                     className={cn(
-                        "group relative flex min-h-[70vh] md:min-h-[85vh] w-full cursor-pointer flex-col justify-end overflow-hidden border-r border-white/5 bg-zinc-900 p-10 md:p-16 transition-all duration-700",
+                        "group relative flex min-h-[70vh] md:min-h-[85vh] w-full cursor-pointer flex-col justify-end overflow-hidden border-r border-white/5 bg-zinc-900 p-10 md:p-16 transition-all duration-700 rounded-none border-none shadow-none",
                         className
                     )}
                 >
@@ -103,20 +104,20 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                     </div>
 
                     {/* Content */}
-                    <div className="relative z-20 space-y-6">
+                    <CardContent className="relative z-20 space-y-6 p-0">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
                             <div className="mb-4 flex items-center justify-between">
-                                <h3 className="text-6xl font-black uppercase tracking-tighter text-white md:text-7xl lg:text-8xl leading-[0.8]">
+                                <CardTitle className="text-6xl font-black uppercase tracking-tighter text-white md:text-7xl lg:text-8xl leading-[0.85] md:leading-[0.8]">
                                     {title.split(' ').map((word, i) => (
                                         <span key={i} className="block group-hover:text-white transition-colors duration-500">
                                             {word}
                                         </span>
                                     ))}
-                                </h3>
+                                </CardTitle>
                                 <div className="rounded-full border border-white/20 p-4 transition-all duration-500 group-hover:bg-white group-hover:border-transparent">
                                     <Play className="h-8 w-8 text-white group-hover:text-black transition-colors duration-500 fill-current" />
                                 </div>
@@ -137,8 +138,8 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                 transition={{ duration: 1.5, ease: "anticipate", delay: 0.5 }}
                             />
                         </div>
-                    </div>
-                </div>
+                    </CardContent>
+                </Card>
             </DialogTrigger>
 
             <DialogContent className="fixed top-0! left-0! translate-x-0! translate-y-0! w-full! h-dvh max-w-none! bg-black text-white p-0 overflow-hidden outline-none border-none shadow-none z-100">

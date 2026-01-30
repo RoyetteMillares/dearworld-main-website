@@ -15,33 +15,33 @@ const Logos = ({ interactive = true }: { interactive?: boolean }) => {
     ];
 
     return (
-        <section id="logos" className="py-24 bg-black overflow-hidden relative border-y border-white/5">
+        <section id="logos" className="py-24 bg-black overflow-hidden relative border-y-2 border-white">
             <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6">
-                <div className="flex items-center gap-6 mb-24">
-                    <span className="h-px grow bg-white/10"></span>
-                    <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/40 whitespace-nowrap">
-                        As Featured In
+                <div className="flex items-center gap-12 mb-24 font-black">
+                    <span className="h-0.5 grow bg-white/20"></span>
+                    <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white/50 whitespace-nowrap">
+                        Strategic Partners / Recognition
                     </span>
-                    <span className="h-px grow bg-white/10"></span>
+                    <span className="h-0.5 grow bg-white/20"></span>
                 </div>
 
-                <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+                <div className="flex flex-wrap justify-center items-center gap-9 md:gap-10 transition-all duration-1000">
                     {media.map((logo, i) => {
                         const content = (
                             <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
+                                transition={{ delay: i * 0.05, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                                 className={cn(
-                                    "relative h-8 md:h-12 w-24 md:w-36 transition-all duration-700 flex items-center justify-center"
+                                    "relative h-10 md:h-14 w-28 md:w-40 flex items-center justify-center hover:scale-110 transition-transform duration-500"
                                 )}
                             >
                                 <Image
                                     src={logo.src}
                                     alt={logo.name}
                                     fill
-                                    className={`object-contain transition-all duration-700 ${logo.name === "MSNBC" ? "invert" : ""}`}
+                                    className={`object-contain ${logo.name === "MSNBC" ? "invert" : ""}`}
                                 />
                             </motion.div>
                         );

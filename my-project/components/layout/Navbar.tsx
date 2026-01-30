@@ -39,6 +39,12 @@ export function Navbar() {
                     <Link href="/solutions" className="text-white hover:text-gray-500 text-xs font-black tracking-widest uppercase transition-colors">
                         Solutions
                     </Link>
+                    <Link href="/keynote-experience" className="text-white hover:text-gray-500 text-xs font-black tracking-widest uppercase transition-colors">
+                        Experience
+                    </Link>
+                    <Link href="/partnerships" className="text-white hover:text-gray-500 text-xs font-black tracking-widest uppercase transition-colors">
+                        Partnerships
+                    </Link>
                     <Link href="/results" className="text-white hover:text-gray-500 text-xs font-black tracking-widest uppercase transition-colors">
                         Our Work
                     </Link>

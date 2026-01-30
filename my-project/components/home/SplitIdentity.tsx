@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "@/components/ui/card";
 
 export function SplitIdentity() {
     return (
@@ -37,24 +38,30 @@ export function SplitIdentity() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="relative max-w-md space-y-8"
+                    className="relative max-w-md w-full"
                 >
-                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40">Organizations</span>
-                    <h2 className="text-5xl font-black tracking-tighter uppercase md:text-7xl">
-                        Building <br />
-                        <span className="text-white">Skills</span>
-                    </h2>
-                    <p className="text-gray-400 text-lg leading-relaxed">
-                        Transform your corporate culture through the proprietary science of personal narrative.
-                    </p>
-                    <div className="pt-4">
-                        <Button
-                            size="lg"
-                            className="bg-white text-black hover:bg-black hover:text-white border-2 border-transparent hover:border-black h-16 px-10 text-xl font-black uppercase tracking-[0.2em] transition-all duration-300"
-                        >
-                            Explore Solutions <ArrowRight className="ml-2 h-6 w-6" />
-                        </Button>
-                    </div>
+                    <Card className="bg-transparent border-none p-0 shadow-none space-y-8 text-center text-white">
+                        <CardHeader className="p-0 space-y-4">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40">Organizations</span>
+                            <CardTitle className="text-5xl font-black tracking-tighter uppercase md:text-7xl">
+                                Building <br />
+                                <span className="text-white">Skills</span>
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="p-0 space-y-8">
+                            <CardDescription className="text-gray-400 text-lg leading-relaxed">
+                                Transform your corporate culture through the proprietary science of personal narrative.
+                            </CardDescription>
+                            <div className="pt-4">
+                                <Button
+                                    size="lg"
+                                    className="bg-white text-black hover:bg-black hover:text-white border-2 border-transparent hover:border-black h-16 px-10 text-xl font-black uppercase tracking-[0.2em] transition-all duration-300"
+                                >
+                                    Explore Solutions <ArrowRight className="ml-2 h-6 w-6" />
+                                </Button>
+                            </div>
+                        </CardContent>
+                    </Card>
                 </motion.div>
             </Link>
 
@@ -70,24 +77,30 @@ export function SplitIdentity() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="relative max-w-md space-y-8"
+                    className="relative max-w-md w-full"
                 >
-                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-black/40">Communities</span>
-                    <h2 className="text-5xl font-black tracking-tighter uppercase md:text-7xl">
-                        Building <br />
-                        <span className="text-white">Connection</span>
-                    </h2>
-                    <p className="text-black/70 text-lg font-medium leading-relaxed">
-                        Join a global movement of individuals sharing their authentic stories with the world.
-                    </p>
-                    <div className="pt-4">
-                        <Button
-                            size="lg"
-                            className="bg-black text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-black h-16 px-10 text-xl font-black uppercase tracking-[0.2em] transition-all duration-300"
-                        >
-                            Visit Foundation <ArrowRight className="ml-2 h-6 w-6" />
-                        </Button>
-                    </div>
+                    <Card className="bg-transparent border-none p-0 shadow-none space-y-8 text-center text-black">
+                        <CardHeader className="p-0 space-y-4">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-black/40">Communities</span>
+                            <CardTitle className="text-5xl font-black tracking-tighter uppercase md:text-7xl">
+                                Building <br />
+                                <span className="text-white">Connection</span>
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="p-0 space-y-8">
+                            <CardDescription className="text-black/70 text-lg font-medium leading-relaxed">
+                                Join a global movement of individuals sharing their authentic stories with the world.
+                            </CardDescription>
+                            <div className="pt-4">
+                                <Button
+                                    size="lg"
+                                    className="bg-black text-white hover:bg-white hover:text-black border-2 border-transparent hover:border-black h-16 px-10 text-xl font-black uppercase tracking-[0.2em] transition-all duration-300"
+                                >
+                                    Visit Foundation <ArrowRight className="ml-2 h-6 w-6" />
+                                </Button>
+                            </div>
+                        </CardContent>
+                    </Card>
                 </motion.div>
             </Link>
         </section>
