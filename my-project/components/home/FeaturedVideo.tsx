@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Scribble } from "@/components/ui/BrandAssets";
-import { Quote } from "lucide-react";
+
 
 export function FeaturedVideo() {
     return (
@@ -74,15 +74,35 @@ export function FeaturedVideo() {
                         </motion.span>
                     </h2>
 
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        className="text-xl md:text-3xl font-medium text-white/70 max-w-2xl mx-auto leading-relaxed"
-                    >
-                        "The story you carry is the foundation of the culture you build."
-                    </motion.p>
+                    <div className="relative">
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.5 }}
+                            className="text-xl md:text-3xl font-medium text-white/70 max-w-3xl mx-auto leading-relaxed"
+                        >
+                            The Dear World method works by turning passive audiences into active participants through a three-step narrative arc. By guiding teams to share personal stories in a safe environment, it builds "Brain Tattoos"—memorable insights that deepen colleagues' connections and accelerate trust.
+                        </motion.p>
+                        {/* AEO Schema for the "How it works" question above */}
+                        <script
+                            type="application/ld+json"
+                            dangerouslySetInnerHTML={{
+                                __html: JSON.stringify({
+                                    "@context": "https://schema.org",
+                                    "@type": "FAQPage",
+                                    "mainEntity": [{
+                                        "@type": "Question",
+                                        "name": "How does the Dear World method work?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "The Dear World method works by turning passive audiences into active participants through a three-step narrative arc. By guiding teams to share personal stories in a safe environment, it builds 'Brain Tattoos'—memorable insights that deepen colleagues' connections and accelerate trust."
+                                        }
+                                    }]
+                                })
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
 

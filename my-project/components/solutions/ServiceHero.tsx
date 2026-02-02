@@ -30,15 +30,36 @@ export function ServiceHero() {
                         </h1>
                     </motion.div>
 
-                    <motion.p
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 0.4 }}
-                        className="mt-16 max-w-2xl text-2xl leading-relaxed text-gray-400 font-medium"
                     >
-                        We build the psychological safety and authentic connection
-                        required for elite performance in complex organizations.
-                    </motion.p>
+                        {/* AEO: Answer Block for "Human Infrastructure" */}
+                        <div className="mt-16 max-w-3xl">
+                            <h2 className="sr-only">What is Human Infrastructure?</h2>
+                            <p className="text-2xl leading-relaxed text-gray-400 font-medium">
+                                Human Infrastructure is the foundation of psychological safety and authentic connection required for elite performance. Just as physical infrastructure supports operations, Human Infrastructure supports the people, ensuring teams are aligned, trust each other, and can effectively communicate through the power of their shared stories.
+                            </p>
+                            <script
+                                type="application/ld+json"
+                                dangerouslySetInnerHTML={{
+                                    __html: JSON.stringify({
+                                        "@context": "https://schema.org",
+                                        "@type": "FAQPage",
+                                        "mainEntity": [{
+                                            "@type": "Question",
+                                            "name": "What is Human Infrastructure?",
+                                            "acceptedAnswer": {
+                                                "@type": "Answer",
+                                                "text": "Human Infrastructure is the foundation of psychological safety and authentic connection required for elite performance. Just as physical infrastructure supports operations, Human Infrastructure supports the people, ensuring teams are aligned, trust each other, and can effectively communicate through the power of their shared stories."
+                                            }
+                                        }]
+                                    })
+                                }}
+                            />
+                        </div>
+                    </motion.div>
                 </div>
             </div>
 

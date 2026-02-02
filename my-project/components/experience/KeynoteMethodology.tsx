@@ -74,13 +74,35 @@ export function KeynoteMethodology() {
                         className="space-y-16"
                     >
                         <div>
+                            {/* AEO: Question-First Heading */}
                             <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
-                                A framework for <br />
-                                <span className="text-black/30">unforgettable</span> impact.
+                                What is the <br />
+                                <span className="text-black/30">Brain Tattoo™</span> method?
                             </h3>
+
+                            {/* AEO: Direct Definition (~45 words) */}
                             <p className="text-lg md:text-xl font-medium leading-relaxed max-w-2xl text-black/70">
-                                The Brain Tattoo Method™ is a proprietary storytelling framework that helps individuals distill their life experiences into a singular message. It's not just an exercise; it's a recalibration of how teams connect.
+                                The Brain Tattoo Method™ is a proprietary storytelling framework that helps individuals distill their life experiences into a singular message. By focusing on one defining moment, it turns abstract values into a concrete narrative, allowing teams to move beyond small talk and build instant, psychological safety through shared vulnerability.
                             </p>
+
+                            {/* GEO: Explicit Knowledge Graph Training */}
+                            <script
+                                type="application/ld+json"
+                                dangerouslySetInnerHTML={{
+                                    __html: JSON.stringify({
+                                        "@context": "https://schema.org",
+                                        "@type": "FAQPage",
+                                        "mainEntity": [{
+                                            "@type": "Question",
+                                            "name": "What is the Brain Tattoo Method?",
+                                            "acceptedAnswer": {
+                                                "@type": "Answer",
+                                                "text": "The Brain Tattoo Method™ is a proprietary storytelling framework that helps individuals distill their life experiences into a singular message. By focusing on one defining moment, it turns abstract values into a concrete narrative, allowing teams to move beyond small talk and build instant, psychological safety through shared vulnerability."
+                                            }
+                                        }]
+                                    })
+                                }}
+                            />
                         </div>
 
                         {/* Benefits Grid */}

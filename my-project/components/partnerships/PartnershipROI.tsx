@@ -20,8 +20,34 @@ export function PartnershipROI() {
             <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
                 <div className="mb-24 flex items-center gap-12">
                     <div className="py-1 px-3 bg-black text-white">
-                        <span className="text-[10px] font-black uppercase tracking-[0.4em]">The ROI / Benefits</span>
+                        <span className="text-[10px] font-black uppercase tracking-[0.4em]">PARTNERSHIP VALUE</span>
                     </div>
+                </div>
+
+                <div className="mb-24 max-w-3xl">
+                    <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+                        What is the ROI of partnering with Dear World?
+                    </h2>
+                    <p className="text-lg md:text-xl font-medium leading-relaxed text-black/70">
+                        Partnering with Dear World drives immediate value through exclusive revenue-sharing models, priority access to our proprietary narrative science, and ready-to-deploy co-marketing assets. We certify your team to scale our proven methodology, creating a sustainable internal capability for culture change.
+                    </p>
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "FAQPage",
+                                "mainEntity": [{
+                                    "@type": "Question",
+                                    "name": "What is the ROI of partnering with Dear World?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Partnering with Dear World drives immediate value through exclusive revenue-sharing models, priority access to our proprietary narrative science, and ready-to-deploy co-marketing assets. We certify your team to scale our proven methodology, creating a sustainable internal capability for culture change."
+                                    }
+                                }]
+                            })
+                        }}
+                    />
                     <div className="h-0.5 grow bg-black/10"></div>
                 </div>
 
