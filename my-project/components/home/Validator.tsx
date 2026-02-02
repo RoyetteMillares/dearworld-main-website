@@ -22,7 +22,7 @@ export function Validator() {
                         </span>
                     </div>
 
-                    <h2 className="text-6xl md:text-8xl lg:text-[7vw] font-black uppercase leading-[0.85] tracking-tighter text-white">
+                    <h2 className="text-6xl md:text-8xl lg:text-[6vw] font-black uppercase leading-[0.85] tracking-tighter text-white">
                         "We didn't just build a
                         <span className="text-white/30"> methodology.</span> <br />
                         We built a way to finally be{" "}
