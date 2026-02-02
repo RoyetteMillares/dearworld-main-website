@@ -4,6 +4,7 @@ import { Methods } from "@/components/home/Methods";
 import Logos from "@/components/home/Clients";
 import { Validator } from "@/components/home/Validator";
 import { PartnerImpact } from "@/components/home/PartnerImpact";
+import { AuthoritySpotlight } from "@/components/home/AuthoritySpotlight";
 import { Foundation } from "@/components/home/Foundation";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import SpeakingTestimonials from "@/components/home/SpeakingTestimonials";
@@ -28,6 +29,7 @@ export default function Home() {
       <SplitIdentity />
       <Methods />
       <PartnerImpact />
+      <AuthoritySpotlight />
       <Validator />
       <SpeakingTestimonials />
       <FinalCTA />
