@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
@@ -30,6 +31,29 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Dear World",
+              "url": "https://dearworld.com",
+              "logo": "https://dearworld.com/icon.png",
+              "sameAs": [
+                "https://www.linkedin.com/company/dearworld",
+                "https://www.instagram.com/dearworld",
+                "https://www.facebook.com/dearworld"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "areaServed": "Global"
+              }
+            })
+          }}
+        />
       </body>
     </html>
   );
