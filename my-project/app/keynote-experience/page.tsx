@@ -14,6 +14,7 @@ export default function KeynoteExperiencePage() {
             <div className="bg-white">
                 <AnswerBlock
                     question="What is an interactive keynote experience?"
+                    tag="Definition"
                     answer="An interactive keynote experience drives culture change by turning passive audiences into active participants. We use unique methodology, real stories, and shared moments to create trust, alignment, and lasting behavior change across your entire organization."
                     className="mb-8"
                 />

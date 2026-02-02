@@ -24,18 +24,18 @@ export function Navbar() {
     }, [isMobileMenuOpen]);
 
     const navLinks = [
-        // { href: "/solutions", label: "Solutions" },
         { href: "/keynote-experience", label: "Keynote Speaking" },
         { href: "/partnerships", label: "Partnerships" },
         { href: "/sincerely-club", label: "The Sincerely Club" },
         { href: "/contact", label: "Contact" },
+        { href: "/foundation", label: "Foundation" },
     ];
 
     return (
         <motion.nav
             aria-label="Main navigation"
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 flex h-24 items-center transition-all duration-300 font-sans bg-black border-b border-white/10"
+                "fixed top-0 left-0 right-0 z-50 flex h-24 items-center transition-all duration-300 bg-black border-b border-white/10 font-sans"
             )}
         >
             <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -48,58 +48,41 @@ export function Navbar() {
                         height={150}
                     />
                     {isFoundation && (
-                        <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40 mt-1">
+                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 mt-1">
                             Foundation
                         </span>
                     )}
                 </Link>
 
-                {/* Desktop Nav - Hidden on mobile */}
+                {/* Desktop Nav - Unified Horizontal Strip */}
                 <div className="hidden lg:flex items-center gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="text-white hover:text-gray-500 text-xs font-black tracking-widest uppercase transition-colors"
+                            className={cn(
+                                "text-white hover:text-white/50 text-[10px] font-black tracking-[0.4em] uppercase transition-all duration-300",
+                                pathname === link.href ? "opacity-100" : "opacity-60"
+                            )}
                         >
                             {link.label}
                         </Link>
                     ))}
+
+                    <Link href="/contact">
+                        <Button
+                            className="h-12 px-8 rounded-full font-black uppercase tracking-[0.2em] text-[10px] bg-white text-black hover:bg-gray-200 transition-all duration-500"
+                        >
+                            Book Demo
+                        </Button>
+                    </Link>
                 </div>
 
-                {/* Right Actions & Mobile Toggle */}
-                <div className="flex items-center gap-8 z-50 relative">
-                    <div className="hidden lg:block">
-                        {!isFoundation ? (
-                            <Link href="/foundation" className="text-white hover:text-gray-500 text-xs font-black tracking-widest uppercase transition-colors">
-                                Foundation
-                            </Link>
-                        ) : (
-                            <Link href="/" className="text-white hover:text-gray-500 text-xs font-black tracking-widest uppercase transition-colors">
-                                For Business
-                            </Link>
-                        )}
-                    </div>
-
-                    <div className="hidden lg:block">
-                        <Link href="/contact">
-                            <Button
-                                className={cn(
-                                    "h-14 px-8 rounded-full font-black uppercase tracking-[0.2em] text-xs transition-all duration-500",
-                                    isFoundation
-                                        ? "bg-white text-black hover:bg-gray-200"
-                                        : "bg-white text-black hover:bg-gray-200"
-                                )}
-                            >
-                                {isFoundation ? "Donate" : "Book Demo"}
-                            </Button>
-                        </Link>
-                    </div>
-
-                    {/* Mobile Menu Toggle */}
+                {/* Mobile Menu Toggle */}
+                <div className="flex lg:hidden items-center gap-4">
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="lg:hidden text-white p-2 focus:outline-none"
+                        className="text-white p-2 focus:outline-none z-50 relative"
                         aria-label="Toggle mobile menu"
                     >
                         {isMobileMenuOpen ? (
@@ -132,39 +115,12 @@ export function Navbar() {
                                     <Link
                                         href={link.href}
                                         onClick={() => setIsMobileMenuOpen(false)}
-                                        className="text-4xl font-black uppercase tracking-tight text-white hover:text-gray-500 transition-colors block py-2"
+                                        className="text-4xl font-black uppercase tracking-tight text-white hover:text-white/50 transition-colors block py-2"
                                     >
                                         {link.label}
                                     </Link>
                                 </motion.div>
                             ))}
-
-                            <div className="h-px w-full bg-white/10 my-4" />
-
-                            {/* Mobile Foundation Link */}
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.6 }}
-                            >
-                                {!isFoundation ? (
-                                    <Link
-                                        href="/foundation"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                        className="text-xl font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors block py-2"
-                                    >
-                                        Foundation
-                                    </Link>
-                                ) : (
-                                    <Link
-                                        href="/"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                        className="text-xl font-bold uppercase tracking-widest text-white/70 hover:text-white transition-colors block py-2"
-                                    >
-                                        For Business
-                                    </Link>
-                                )}
-                            </motion.div>
 
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -174,7 +130,7 @@ export function Navbar() {
                             >
                                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                                     <Button className="w-full h-16 rounded-full font-black uppercase tracking-[0.2em] text-sm bg-white text-black hover:bg-gray-200">
-                                        {isFoundation ? "Donate" : "Book Demo"}
+                                        Book Demo
                                     </Button>
                                 </Link>
                             </motion.div>

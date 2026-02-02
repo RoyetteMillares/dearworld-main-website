@@ -12,8 +12,8 @@ export function Footer() {
 
                     {/* Brand & Mission */}
                     <div className="md:col-span-2 space-y-6">
-                        <h2 className="text-4xl font-bold tracking-tighter uppercase">Dear World</h2>
-                        <p className="max-w-md text-gray-400 text-lg leading-relaxed">
+                        <h2 className="text-4xl font-black tracking-tighter uppercase">Dear World</h2>
+                        <p className="max-w-md text-white/40 text-lg leading-relaxed font-medium">
                             We help people and organizations find their voice through the power of storytelling. Born in New Orleans, shared with the world.
                         </p>
                         <div className="flex gap-4">
@@ -22,20 +22,18 @@ export function Footer() {
                         </div>
                     </div>
 
-                    {/* Quick Links */}
                     <div className="space-y-4">
-                        <h3 className="font-bold uppercase tracking-widest text-white text-sm">Services</h3>
-                        <ul className="space-y-2 text-gray-400">
-                            <li><Link href="/solutions/keynote" className="hover:text-white transition-colors">Keynote Experiences</Link></li>
-                            <li><Link href="/solutions/brain-tattoo" className="hover:text-white transition-colors">Brain Tattoo™</Link></li>
-                            <li><Link href="/solutions/portrait" className="hover:text-white transition-colors">Portrait Process™</Link></li>
+                        <h3 className="font-black uppercase tracking-[0.4em] text-white text-[10px]">Resources</h3>
+                        <ul className="space-y-2 text-white/40">
+                            <li><Link href="/keynote-experience" className="hover:text-white transition-colors">Keynote Experiences</Link></li>
+                            <li><Link href="/glossary" className="hover:text-white transition-colors">Methodology Glossary</Link></li>
                             <li><Link href="/sincerely-club" className="hover:text-white transition-colors">The Sincerely Club</Link></li>
                         </ul>
                     </div>
 
                     {/* Newsletter / CTA */}
                     <div className="space-y-6">
-                        <h3 className="font-bold uppercase tracking-widest text-white text-sm">Join the Movement</h3>
+                        <h3 className="font-black uppercase tracking-[0.4em] text-white text-[10px]">Join the Movement</h3>
                         <div className="relative">
                             <input
                                 type="email"

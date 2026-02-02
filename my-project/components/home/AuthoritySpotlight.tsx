@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Script from "next/script";
 
 export function AuthoritySpotlight() {
@@ -23,7 +24,7 @@ export function AuthoritySpotlight() {
                     </h2>
 
                     <p className="text-xl md:text-2xl font-medium text-white/70 leading-relaxed max-w-xl">
-                        Leaders like Mark D. Benjamin (CEO, Nuance Communications) describe Dear World as a critical tool for leadership alignment. Drawing on his experience as President of NCR Corporation, Mark emphasizes how the methodology unifies global teams around a shared human narrative.
+                        Leaders like Mark D. Benjamin (CEO, Nuance Communications) describe Dear World as a critical tool for <Link href="/glossary#human-infrastructure" className="underline decoration-white/30 hover:decoration-white transition-all">leadership alignment</Link>. Drawing on his experience as President of NCR Corporation, Mark emphasizes how the methodology unifies global teams around a shared human narrative.
                     </p>
 
                     <Script

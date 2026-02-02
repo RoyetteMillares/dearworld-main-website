@@ -59,7 +59,7 @@ export function PartnershipHero() {
                             initial={{ y: 100, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                            className="block text-[4vw] md:text-[3vw] leading-none font-serif italic font-normal tracking-normal mb-4 md:mb-8"
+                            className="block text-[4vw] md:text-[3vw] leading-none font-sans italic font-medium tracking-normal mb-4 md:mb-8"
                         >
                             with Dear World
                         </motion.span>

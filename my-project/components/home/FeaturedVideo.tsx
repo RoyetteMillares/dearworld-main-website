@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Scribble } from "@/components/ui/BrandAssets";
 
 
@@ -82,7 +83,7 @@ export function FeaturedVideo() {
                             transition={{ duration: 1, delay: 0.5 }}
                             className="text-xl md:text-3xl font-medium text-white/70 max-w-3xl mx-auto leading-relaxed"
                         >
-                            The Dear World method works by turning passive audiences into active participants through a three-step narrative arc. By guiding teams to share personal stories in a safe environment, it builds "Brain Tattoos"—memorable insights that deepen colleagues' connections and accelerate trust.
+                            The Dear World method works by turning passive audiences into active participants through a <Link href="/glossary#brain-tattoo" className="underline decoration-white/30 hover:decoration-white transition-all">three-step narrative arc</Link>. By guiding teams to share personal stories in a safe environment, it builds <Link href="/glossary#brain-tattoo" className="underline decoration-white/30 hover:decoration-white transition-all">"Brain Tattoos"</Link>—memorable insights that deepen colleagues' connections and accelerate trust.
                         </motion.p>
                         {/* AEO Schema for the "How it works" question above */}
                         <script

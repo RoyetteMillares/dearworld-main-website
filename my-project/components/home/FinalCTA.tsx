@@ -23,7 +23,7 @@ export function FinalCTA() {
                         </span>
                     </h2>
 
-                    <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed font-bold italic">
+                    <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed font-black italic">
                         Let’s talk about what your moment requires.
                     </p>
 

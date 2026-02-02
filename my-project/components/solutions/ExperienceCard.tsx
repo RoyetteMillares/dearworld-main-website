@@ -49,7 +49,7 @@ export function ExperienceCard({
                     <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tight text-black">
                         {title}
                     </h2>
-                    <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.4em] text-black/40">
+                    <p className="mt-2 text-[10px] font-black uppercase tracking-[0.4em] text-black/40">
                         {subtitle}
                     </p>
                 </div>
@@ -61,11 +61,11 @@ export function ExperienceCard({
                 <div className="flex gap-8 border-t border-black/10 pt-8">
                     <div className="flex items-center gap-2">
                         <Clock className="w-5 h-5 text-black" />
-                        <span className="text-sm font-bold uppercase">{duration}</span>
+                        <span className="text-sm font-black uppercase">{duration}</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <Users className="w-5 h-5 text-black" />
-                        <span className="text-sm font-bold uppercase">{capacity}</span>
+                        <span className="text-sm font-black uppercase">{capacity}</span>
                     </div>
                 </div>
 

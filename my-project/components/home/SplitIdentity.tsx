@@ -42,7 +42,7 @@ export function SplitIdentity() {
                 >
                     <Card className="bg-transparent border-none p-0 shadow-none space-y-8 text-center text-white">
                         <CardHeader className="p-0 space-y-4">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/40">Organizations</span>
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40">Organizations</span>
                             <CardTitle className="text-5xl font-black tracking-tighter uppercase md:text-7xl">
                                 Building <br />
                                 <span className="text-white">Skills</span>
@@ -81,7 +81,7 @@ export function SplitIdentity() {
                 >
                     <Card className="bg-transparent border-none p-0 shadow-none space-y-8 text-center text-black">
                         <CardHeader className="p-0 space-y-4">
-                            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-black/40">Communities</span>
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black/40">Communities</span>
                             <CardTitle className="text-5xl font-black tracking-tighter uppercase md:text-7xl">
                                 Building <br />
                                 <span className="text-white">Connection</span>

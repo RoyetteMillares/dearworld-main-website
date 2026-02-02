@@ -85,7 +85,7 @@ export function Foundation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="max-w-2xl text-black text-xl md:text-3xl leading-tight font-bold uppercase tracking-tight"
+                        className="max-w-2xl text-black text-xl md:text-3xl leading-tight font-black uppercase tracking-tight"
                     >
                         <p>
                             Since 2011, we've traveled the world through{" "}

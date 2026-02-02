@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const STATS = [
@@ -14,15 +15,19 @@ export function ROIStats() {
     return (
         <section className="bg-black py-32 text-white overflow-hidden relative">
             <div className="container mx-auto px-6">
-                <div className="mb-20 text-center">
-                    <span className="text-sm font-bold uppercase tracking-[0.3em] text-white opacity-40">
-                        Proven Impact
-                    </span>
-                    <h2 className="mt-6 text-4xl font-bold md:text-5xl lg:text-6xl tracking-tighter max-w-4xl mx-auto">
+                <div className="mb-20 text-center flex flex-col items-center">
+                    <div className="inline-block py-1 px-3 bg-white text-black mb-8">
+                        <span className="text-[10px] font-black uppercase tracking-[0.4em]">
+                            Proven Impact
+                        </span>
+                    </div>
+
+                    <h2 className="text-4xl md:text-7xl lg:text-[8vw] font-black uppercase tracking-tighter leading-[0.9] max-w-5xl mx-auto mb-12">
                         What is the ROI of corporate storytelling?
                     </h2>
-                    <p className="mt-8 text-xl md:text-2xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-                        Corporate storytelling delivers measurable ROI by increasing employee retention, accelerating psychological safety, and unifying leadership vision. When teams feel seen and heard, engagement scores rise, and turnover costs drop, creating a direct financial impact on the bottom line.
+
+                    <p className="text-xl md:text-3xl font-medium text-white/70 max-w-4xl mx-auto leading-relaxed">
+                        <Link href="/glossary#narrative-psychology" className="underline decoration-white/30 hover:decoration-white transition-all">Corporate storytelling</Link> delivers measurable ROI by increasing employee retention, accelerating psychological safety, and unifying leadership vision. When teams feel seen and heard, engagement scores rise, and turnover costs drop, creating a direct financial impact on the bottom line.
                     </p>
                     <script
                         type="application/ld+json"

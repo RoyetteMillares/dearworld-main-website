@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/foundation',
         '/sincerely-club',
         '/contact',
+        '/glossary',
     ];
 
     return routes.map((route) => ({

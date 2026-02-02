@@ -14,6 +14,7 @@ export default function PartnershipsPage() {
             <div className="bg-white">
                 <AnswerBlock
                     question="How does Dear World partner with organizations?"
+                    tag="Overview"
                     answer="Dear World partners with organizations to deliver impactful storytelling experiences that strengthen internal culture and external brand affinity. We work closely with leadership to design engagements that align with your strategic goals, ensuring every story shared drives meaningful connection and results."
                     className="mb-8"
                 />

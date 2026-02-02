@@ -110,8 +110,8 @@ const ContactForm = () => {
         }
     };
 
-    const inputClasses = "w-full bg-white border border-transparent rounded-lg px-4 py-3 text-black font-bold focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-transparent transition-all disabled:opacity-50 placeholder:text-gray-400";
-    const labelClasses = "text-[10px] font-bold uppercase tracking-[0.4em] text-white mb-1 block";
+    const inputClasses = "w-full bg-white border border-transparent rounded-lg px-4 py-3 text-black font-black focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-transparent transition-all disabled:opacity-50 placeholder:text-gray-400";
+    const labelClasses = "text-[10px] font-black uppercase tracking-[0.4em] text-white mb-1 block";
 
     return (
         <motion.form

@@ -19,6 +19,7 @@ export default function Home() {
       <div className="bg-background">
         <AnswerBlock
           question="What is Dear World?"
+          tag="Mission"
           answer="Dear World is a storytelling organization that helps companies build trust and connection. We use an interactive keynote experience to drive culture change by turning passive audiences into active participants, using real stories and shared moments to create lasting behavior change."
           className="mb-12"
         />

@@ -200,7 +200,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                     {stats?.map((stat, i) => (
                                         <div key={i} className="space-y-2">
                                             <p className="text-5xl md:text-7xl font-black text-white leading-none tracking-tighter">{stat.value}</p>
-                                            <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/60">{stat.label}</p>
+                                            <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60">{stat.label}</p>
                                         </div>
                                     ))}
                                 </div>

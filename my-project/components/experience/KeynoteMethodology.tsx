@@ -59,7 +59,7 @@ export function KeynoteMethodology() {
                         </h2>
 
                         <p className="text-xl md:text-2xl font-medium text-white/60 leading-relaxed max-w-md">
-                            We don't just tell stories. We find the <span className="text-white font-bold">one story</span> that explains who you are.
+                            We don't just tell stories. We find the <span className="text-white font-black">one story</span> that explains who you are.
                         </p>
                     </motion.div>
                 </div>
