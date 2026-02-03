@@ -47,7 +47,7 @@ export function Foundation() {
     return (
         <section
             className={cn(
-                "bg-white py-32 md:py-64 text-black relative overflow-hidden border-t-2 border-black",
+                "bg-white py-32 md:py-64 text-black relative overflow-hidden",
                 handwritten.variable
             )}
         >
