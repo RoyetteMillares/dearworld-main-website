@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface ChocStorySectionProps {
@@ -16,11 +17,13 @@ export function ChocStorySection({
 }: ChocStorySectionProps) {
     return (
         <div className={cn("flex flex-col gap-6", variant === "full" ? "w-full mb-16 px-4 md:px-12" : "w-full")}>
-            <div className="relative overflow-hidden group">
-                <img
+            <div className="relative overflow-hidden group aspect-3/2">
+                <Image
                     src={imageSrc}
                     alt={title}
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                 />
             </div>
 

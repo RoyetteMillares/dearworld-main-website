@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ChocStorySection } from "@/components/choc/chock-story";
 
 // DATA SECTION - Update this to change page content
@@ -90,19 +91,244 @@ export default function AcademyPage() {
         <main className="flex-1 bg-white m-0 p-0">
             <div className="w-full m-0 p-0 overflow-x-hidden">
                 <div className="flex flex-col items-stretch gap-0 m-0 p-0">
-                    {/* Header Images */}
-                    {["image.png", "image1.png", "image2.png", "image3.png"].map((img, idx) => (
-                        <img
-                            key={idx}
-                            src={`/images/${img}`}
-                            alt={`CHOC × Dear World Academy preview ${idx}`}
-                            className="block w-full h-auto mt-16 m-0 p-0"
-                            loading="eager"
-                        />
-                    ))}
+                    {/* HERO Banner Section */}
+                    <section className="relative w-full mt-16">
+                        {/* Hero Image */}
+                        <div className="relative w-full aspect-4/5 md:aspect-21/9">
+                            <Image
+                                src="/images/CHOC-26.jpg"
+                                alt="CHOC × Dear World Academy - Longest Hug"
+                                fill
+                                className="object-cover object-top pt-[2em]"
+                                priority
+                            />
+                            {/* Dark overlay for text legibility */}
+                            <div className="absolute inset-0 bg-black/20" />
 
+                            {/* Academy Presents - Left Side */}
+                            <div className="absolute left-4 md:left-12 top-1/3 md:top-1/2 md:-translate-y-1/2">
+                                <h1 className="text-white text-2xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                                    The Dear World<br />Academy presents
+                                </h1>
+                            </div>
+
+                            {/* Dear Hospital Title - Bottom Center */}
+                            <div className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 text-center w-full px-4">
+                                <h2 className="text-white text-xl md:text-3xl lg:text-4xl font-bold italic">
+                                    Dear Hospital:
+                                </h2>
+                                <p className="text-white text-sm md:text-lg lg:text-xl font-normal mt-1">
+                                    Children&apos;s Hospital of Orange County (choc)
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Partnership Section */}
+                    <section className="w-full mt-8 md:mt-16 mb-16 md:mb-24 px-4 md:px-[45px]">
+                        <div className="max-w-[1400px] mx-auto flex flex-col items-center">
+
+                            <h1 className="text-black text-3xl md:text-5xl font-bold mt-4 text-center">
+                                The Partnership
+                            </h1>
+                            {/* Header with Scribble */}
+                            <div className="flex flex-col items-center mb-8 md:mb-16">
+                                <div className="relative w-64 md:w-96 aspect-4/1">
+                                    <Image
+                                        src="/brand-assets/Scribble-17.png"
+                                        alt=""
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                    />
+                                </div>
+
+                            </div>
+
+                            {/* Two-Column Content Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24">
+                                {/* Left Column: How it happened */}
+                                <div className="flex flex-col gap-8">
+                                    <div className="relative aspect-3/2 w-full overflow-hidden">
+                                        <Image
+                                            src="/images/CHOC-2.jpg"
+                                            alt="CHOC Nurse portrait - Our Stories Matter"
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div className="flex flex-col gap-4">
+                                        <h2 className="text-2xl md:text-3xl font-bold text-black">
+                                            How it happened
+                                        </h2>
+                                        <p className="text-black text-base md:text-lg leading-relaxed font-normal">
+                                            Dear World presents to the American Association of Critical Care Nurses annual conference in 2022. Children's Hospital of Orange County (CHOC) nurses attend and are inspired to bring Dear World to their organization. Director of Nursing Research and Innovation, Dr. Jennifer Hayakawa assembles an interdisciplinary team to participate in the inaugural NurseHack4Health Pitch-A-Thon event. Dr. Hayakawa received seed funding from #FirstRespondersFirst and ALL IN: Wellbeing First for Healthcare to bring this program to life at CHOC.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Right Column: How we onboarded */}
+                                <div className="flex flex-col gap-8">
+                                    <div className="relative aspect-3/2 w-full overflow-hidden">
+                                        <Image
+                                            src="/images/CHOC-39.jpg"
+                                            alt="CHOC Associate portrait - Holy Water"
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div className="flex flex-col gap-4">
+                                        <h2 className="text-3xl font-bold text-black">
+                                            How we onboarded Storytellers
+                                        </h2>
+                                        <p className="text-black text-lg leading-relaxed font-normal">
+                                            Dear World delivers its custom storytelling curriculum over three weeks to certify 10 CHOC associates in the Brain Tattoo storytelling method.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/*FIGURES SECTION*/}
+                    <section className="w-full mt-8 md:mt-16 px-4 md:px-[45px]">
+                        <div className="max-w-[1400px] mx-auto flex flex-col items-center">
+                            {/* Hero Portrait */}
+                            <div className="w-full relative aspect-video md:aspect-21/9 overflow-hidden rounded-none mb-12 md:mb-24">
+                                <Image
+                                    src="/images/CHOC-88.jpg"
+                                    alt="CHOC Hero Portrait"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+
+                            {/* Stats Section */}
+                            <div className="w-full flex flex-col items-center px-4">
+                                {/* Branding Scribble */}
+                                <div className="relative w-48 md:w-96 aspect-4/1 mb-8">
+                                    <Image
+                                        src="/brand-assets/Scribble-17.png"
+                                        alt=""
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+
+                                {/* Stats Grid with Bracket */}
+                                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-24 w-full">
+                                    {/* Left Side: Experience Count */}
+                                    <div className="text-center md:text-right flex-1">
+                                        <p className="text-2xl md:text-5xl font-bold text-black leading-tight">
+                                            Through <span className="text-5xl md:text-8xl">84</span><br />
+                                            completed<br />
+                                            storytelling experiences
+                                        </p>
+                                    </div>
+
+                                    {/* Middle: Orange Bracket (Desktop Only) */}
+                                    <div className="hidden md:block w-12 h-64 border-y-4 border-r-4 border-[#FFB300] rounded-r-xl relative">
+                                        <div className="absolute top-1/2 -right-6 w-6 h-1 bg-[#FFB300] -translate-y-1/2" />
+                                    </div>
+                                    {/* Mobile Divider */}
+                                    <div className="md:hidden w-1 h-24 bg-[#FFB300]" />
+
+                                    {/* Right Side: Detailed Stats */}
+                                    <div className="flex flex-col gap-6 md:gap-12 flex-1 text-center md:text-left">
+                                        <div className="flex flex-col">
+                                            <span className="text-5xl md:text-9xl font-bold text-black leading-none">2,708</span>
+                                            <span className="text-lg md:text-3xl font-normal text-black mt-1 md:mt-2">participants</span>
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="text-5xl md:text-9xl font-bold text-black leading-none">93%</span>
+                                            <span className="text-lg md:text-3xl font-normal text-black mt-1 md:mt-2">Recommended the<br />experience</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Bottom Logo Left Alignment */}
+                                <div className="w-full flex justify-center md:justify-start mt-8 md:mt-12">
+                                    <div className="text-[#FFB300] font-bold italic text-xl flex flex-col leading-none">
+                                        <Image
+                                            src="/images/Brain Tattoo_Black and Orange.png"
+                                            alt=""
+                                            width={200}
+                                            height={200}
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/*FIGURES SECTION END*/}
+                    {/*PRELIMANARY RESULTS SECTION*/}
+                    <section className="w-full mt-8 md:mt-16 px-4 md:px-[45px]">
+                        <div className="max-w-[1400px] mx-auto">
+                            <div className="w-full relative aspect-video md:aspect-21/9 overflow-hidden rounded-none mb-12 md:mb-24">
+                                <Image
+                                    src="/images/CHOC-64.jpg"
+                                    alt="CHOC Hero Portrait"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+
+                            {/* Preliminary Results Stats Section */}
+                            <div className="w-full flex flex-col items-center px-0 md:px-4 mb-8 md:mb-16">
+                                {/* Stats Grid with Bracket */}
+                                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-24 w-full">
+                                    {/* Left Side: Title */}
+                                    <div className="text-center md:text-right flex-1">
+                                        <p className="text-3xl md:text-6xl font-bold text-black leading-tight">
+                                            Preliminary<br />Results
+                                        </p>
+                                    </div>
+
+                                    {/* Middle: Orange Bracket (Desktop Only) */}
+                                    <div className="hidden md:block w-12 h-96 border-y-4 border-r-4 border-[#FFB300] rounded-r-xl relative">
+                                        <div className="absolute top-1/2 -right-6 w-6 h-1 bg-[#FFB300] -translate-y-1/2" />
+                                    </div>
+                                    {/* Mobile Divider */}
+                                    <div className="md:hidden w-1 h-24 bg-[#FFB300]" />
+
+                                    {/* Right Side: Detailed Stats */}
+                                    <div className="flex flex-col gap-6 md:gap-10 flex-1 text-center md:text-left">
+                                        <div className="flex flex-col">
+                                            <span className="text-5xl md:text-9xl font-bold text-black leading-none">89%</span>
+                                            <span className="text-base md:text-2xl font-normal text-black mt-1 md:mt-2">Felt safe to share their story</span>
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="text-5xl md:text-9xl font-bold text-black leading-none">91%</span>
+                                            <span className="text-base md:text-2xl font-normal text-black mt-1 md:mt-2">Felt more connected to CHOC&apos;s Values</span>
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="text-5xl md:text-9xl font-bold text-black leading-none">94%</span>
+                                            <span className="text-base md:text-2xl font-normal text-black mt-1 md:mt-2">Felt more connected to their colleagues</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Bottom Logo Left Alignment */}
+                                <div className="w-full flex justify-center md:justify-start mt-8 md:mt-12">
+                                    <Image
+                                        src="/images/Brain Tattoo_Black and Orange.png"
+                                        alt=""
+                                        width={200}
+                                        height={200}
+                                        className="object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Testimonial Quote */}
+                            <div className="w-full border-t-4 border-[#FFB300] pt-6 md:pt-8 mb-8 md:mb-16">
+                                <p className="text-base md:text-xl text-black leading-relaxed italic">
+                                    &quot;As we waited in line for our photos, we wrote these &apos;brain tattoos&apos; on each other. A magical thing happened–we laughed, we cried, and we connected through our stories. The Dear World experience creates a space to encourage deep connection, vulnerability, and expression.&quot;
+                                </p>
+                            </div>
+                        </div>
+                    </section>
                     {/* Video Section */}
-                    <section className="w-full mt-10 mb-16 px-4 md:px-[45px]">
+                    <section className="w-full mt-6 md:mt-10 mb-10 md:mb-16 px-4 md:px-[45px]">
                         <div className="w-full max-w-[1400px] mx-auto">
                             <div className="relative w-full aspect-video bg-black overflow-hidden rounded-none">
                                 <iframe
@@ -115,28 +341,28 @@ export default function AcademyPage() {
                             </div>
                         </div>
 
-                        <div className="self-stretch text-center justify-start mt-24">
-                            <span className="text-black text-[18px] font-normal font-['Inter'] leading-relaxed">
+                        <div className="self-stretch text-center justify-start mt-12 md:mt-24 px-2">
+                            <span className="text-black text-base md:text-[18px] font-normal leading-relaxed">
                                 If you have questions or think your department might like to participate in the Dear Hospital program, please contact us at
                             </span>
                             <br />
-                            <a href="mailto:DearHospital@choc.org" className="text-black text-[18px] font-bold font-['Inter'] leading-relaxed underline decoration-transparent hover:decoration-inherit transition-colors">
+                            <a href="mailto:DearHospital@choc.org" className="text-black text-base md:text-[18px] font-bold leading-relaxed underline decoration-transparent hover:decoration-inherit transition-colors">
                                 DearHospital@choc.org
                             </a>
                         </div>
 
-                        <h2 className="text-black text-[32px] md:text-[48px] font-bold font-['Inter'] leading-tight md:leading-[57.6px] text-center mt-6">
+                        <h2 className="text-black text-2xl md:text-[48px] font-bold leading-tight md:leading-[57.6px] text-center mt-4 md:mt-6">
                             Dear Hospital Storybooks
                         </h2>
 
-                        <div className="mt-5 flex flex-wrap items-center justify-center gap-4 md:gap-6">
+                        <div className="mt-4 md:mt-5 flex flex-wrap items-center justify-center gap-3 md:gap-6">
                             {STORYBOOKS.map((book) => (
                                 <a
                                     key={book.label}
                                     href={book.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="group relative inline-flex justify-center items-center gap-2 overflow-hidden px-6 py-3 bg-yellow-500 rounded-xl shadow-[0px_8px_30px_-5px_rgba(255,178,0,0.30)] text-black text-base font-normal font-['Inter'] leading-normal transition-all hover:bg-yellow-500/90 active:scale-95"
+                                    className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest bg-[#eab308f2] text-black px-8 py-4 w-fit hover:bg-yellow-500 transition-colors"
                                 >
                                     {book.label}
                                     <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -146,36 +372,41 @@ export default function AcademyPage() {
                     </section>
 
                     {/* Immersive Pop-Ups Grid */}
-                    <div className="space-y-8 px-4 md:px-[45px] mb-16">
-                        {IMMERSIVE_POP_UPS.map((row, rowIdx) => (
-                            <div key={rowIdx} className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                                {row.map((item, itemIdx) => (
-                                    <ChocStorySection key={itemIdx} {...item} variant="partial" />
-                                ))}
-                            </div>
-                        ))}
+                    <div className="px-4 md:px-[45px] mb-10 md:mb-16">
+                        <div className="space-y-8 max-w-[1400px] mx-auto">
+                            {IMMERSIVE_POP_UPS.map((row, rowIdx) => (
+                                <div key={rowIdx} className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                                    {row.map((item, itemIdx) => (
+                                        <ChocStorySection key={itemIdx} {...item} variant="partial" />
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
-                    <h2 className="text-black text-[32px] md:text-[48px] font-bold font-['Inter'] leading-tight md:leading-[57.6px] text-center mt-20 mb-12">
+                    <h2 className="text-black text-2xl md:text-[48px] font-bold leading-tight md:leading-[57.6px] text-center mt-12 md:mt-20 mb-8 md:mb-12 px-4">
                         Browse our Collection of Brain Tattoo Portraits
                     </h2>
 
-                    <div className="space-y-16 mb-24">
-                        {CLINICAL_ORIENTATIONS.map((item, idx) => (
-                            <ChocStorySection key={idx} {...item} />
-                        ))}
+                    <div className="px-4 md:px-[45px] mb-16 md:mb-24">
+                        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-8 gap-y-8 md:gap-y-16">
+                            {CLINICAL_ORIENTATIONS.map((item, idx) => (
+                                <ChocStorySection key={idx} {...item} variant="partial" />
+                            ))}
+                        </div>
                     </div>
 
-                    <div className="space-y-16 mb-24">
-                        {HISTORICAL_SESSIONS.map((row, rowIdx) => (
-                            <div key={rowIdx} className="px-4 md:px-[45px]">
-                                <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    {row.map((item, itemIdx) => (
-                                        <ChocStorySection key={itemIdx} {...item} variant={row.length === 1 ? "full" : "partial"} />
-                                    ))}
-                                </div>
-                            </div>
-                        ))}
+                    <div className="px-4 md:px-[45px] mb-16 md:mb-24">
+                        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-8 gap-y-8 md:gap-y-16">
+                            {HISTORICAL_SESSIONS.flat().map((item, idx, array) => {
+                                const isLast = idx === array.length - 1;
+                                return (
+                                    <div key={idx} className={isLast ? "md:col-span-2" : ""}>
+                                        <ChocStorySection {...item} variant="partial" />
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
 
                     <ChocStorySection
