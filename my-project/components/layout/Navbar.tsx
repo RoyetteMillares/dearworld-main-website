@@ -55,14 +55,14 @@ export function Navbar() {
                 </Link>
 
                 {/* Desktop Nav - Unified Horizontal Strip */}
-                <div className="hidden lg:flex items-center gap-12 text-[10px] font-black uppercase tracking-[0.4em]">
+                <div className="hidden lg:flex items-center gap-10 font-black uppercase">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
                             className={cn(
-                                "text-white hover:text-white/50 text-[10px] font-black tracking-[0.4em] uppercase transition-all duration-300",
-                                pathname === link.href ? "opacity-100" : "opacity-60"
+                                "text-white hover:text-white/50 text-[12px] font-black uppercase transition-all duration-300",
+                                pathname === link.href ? "opacity-100" : "opacity-90"
                             )}
                         >
                             {link.label}

@@ -38,9 +38,9 @@ export function Footer() {
                             <input
                                 type="email"
                                 placeholder="Email Address"
-                                className="w-full bg-zinc-900 border-b border-white/20 py-3 px-0 focus:outline-none focus:border-white transition-colors"
+                                className="w-full bg-zinc-900 border-b border-white/20 py-3 px-3 focus:outline-none focus:border-white transition-colors"
                             />
-                            <button className="absolute right-0 top-1/2 -translate-y-1/2">
+                            <button className="absolute right-4 top-1/2 -translate-y-1/2">
                                 <MoveRight className="text-white w-6 h-6" />
                             </button>
                         </div>
