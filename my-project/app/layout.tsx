@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { Shell } from "@/components/layout/Shell";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({
@@ -30,11 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className={cn(inter.className, "antialiased min-h-screen flex flex-col")}>
-        <Navbar />
-        <main className="grow pt-20">
+        <Shell>
           {children}
-        </main>
-        <Footer />
+        </Shell>
         <Script
           id="organization-schema"
           type="application/ld+json"
