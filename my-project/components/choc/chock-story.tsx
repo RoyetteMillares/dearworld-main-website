@@ -22,7 +22,6 @@ export function ChocStorySection({
                     alt={title}
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
             </div>
 
             <div className="flex flex-col gap-4">
@@ -37,7 +36,7 @@ export function ChocStorySection({
                     href={ctaHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest border-b-2 border-black w-fit pb-1 hover:text-neutral-600 hover:border-neutral-600 transition-colors"
+                    className="inline-flex items-center gap-2 text-sm font-black uppercase tracking-widest bg-[#eab308f2] text-black px-8 py-4 w-fit hover:bg-yellow-500 transition-colors"
                 >
                     View Collection
                     <span className="text-lg">→</span>
