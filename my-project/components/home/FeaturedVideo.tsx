@@ -50,7 +50,6 @@ export function FeaturedVideo() {
                             >
                                 BRAIN
                             </motion.span>
-                            <Scribble variant="13" className="-top-4 -right-12 w-32 h-32 opacity-80 invert absolute z-0 hidden md:block" />
                         </span> <br />
                         <span className="relative inline-block text-white">
                             <motion.span
