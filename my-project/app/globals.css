@@ -111,6 +111,19 @@
     font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     @apply bg-background text-foreground;
   }
+
+  /* Standardized Heading Utilities */
+  .h-display {
+    @apply text-[13vw] md:text-[11vw] lg:text-[10vw] font-black leading-[0.85] md:leading-[0.8] tracking-tighter uppercase;
+  }
+
+  .h-section {
+    @apply text-6xl md:text-8xl lg:text-[8vw] font-black uppercase leading-[0.85] tracking-tighter;
+  }
+
+  .h-card {
+    @apply text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-[0.9] tracking-tighter;
+  }
 }
 
 /* Swiper Pagination Overrides */

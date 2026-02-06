@@ -117,7 +117,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                             transition={{ duration: 0.6, delay: 0.2 }}
                         >
                             <div className="mb-4 flex items-center justify-between">
-                                <CardTitle className="text-6xl font-black uppercase tracking-tighter text-white md:text-7xl lg:text-8xl leading-[0.85] md:leading-[0.8] drop-shadow-lg">
+                                <CardTitle className="h-card text-white drop-shadow-lg leading-none md:leading-none">
                                     {title.split(' ').map((word, i) => (
                                         <span key={i} className="block group-hover:text-white transition-colors duration-500">
                                             {word}
@@ -177,7 +177,7 @@ const MethodCard = ({ title, description, videoSrc, imageSrc, fallbackImage, hre
                                         Deep Dive
                                     </span>
                                 </motion.div>
-                                <DialogTitle className="text-5xl md:text-6xl lg:text-8xl font-black uppercase tracking-[-0.04em] mt-6 text-white leading-[0.85] wrap-break-word">
+                                <DialogTitle className="h-section mt-6 text-white leading-none md:leading-none wrap-break-word">
                                     {title}
                                 </DialogTitle>
                                 {/* Accessibility: Visually hidden description */}

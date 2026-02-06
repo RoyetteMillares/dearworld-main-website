@@ -71,7 +71,7 @@ export function Foundation() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-7xl md:text-[10vw] font-black tracking-[-0.05em] uppercase leading-[0.8]"
+                        className="h-section tracking-tight leading-none md:leading-none mt-4"
                     >
                         Help others <br />
                         <span className="relative inline-block mt-4">

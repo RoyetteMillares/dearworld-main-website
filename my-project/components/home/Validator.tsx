@@ -8,7 +8,7 @@ export function Validator() {
     return (
         <section className="bg-black text-white min-h-screen flex flex-col lg:flex-row border-t-2 border-white/10 relative overflow-hidden">
             {/* Left Column: Typography */}
-            <div className="w-full lg:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center relative z-10">
+            <div className="w-full lg:w-1/2 p-8 md:p-16 lg:p-24 pr-12 md:pr-24 lg:pr-32 flex flex-col justify-center relative z-10">
                 <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -22,7 +22,7 @@ export function Validator() {
                         </span>
                     </div>
 
-                    <h2 className="text-6xl md:text-8xl lg:text-[6vw] font-black uppercase leading-[0.85] tracking-tighter text-white">
+                    <h2 className="h-section text-white">
                         "We didn't just build a
                         <span className="text-white/30"> methodology.</span> <br />
                         We built a way to finally be{" "}

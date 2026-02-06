@@ -11,10 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dear World",
-  description: "Storytelling that inspires and connects.",
   icons: {
-    icon: "/icon.png",
+    icon: "/favicon.svg",
   },
   verification: {
     google: "5ZJiQp-n-lj21UcLVqXWqtIzLInqzqQRQATiB1Gd-AY",
@@ -41,7 +39,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Dear World",
               "url": "https://dearworld.com",
-              "logo": "https://dearworld.com/icon.png",
+              "logo": "https://dearworld.com/favicon.svg",
               "sameAs": [
                 "https://www.linkedin.com/company/dearworld",
                 "https://www.instagram.com/dearworld",
