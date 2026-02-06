@@ -11,7 +11,6 @@ import { Menu, X } from "lucide-react";
 
 export function Navbar() {
     const pathname = usePathname();
-    const isFoundation = pathname?.startsWith("/foundation");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // Lock body scroll when menu is open
@@ -28,7 +27,7 @@ export function Navbar() {
         { href: "/partnerships", label: "Partnerships" },
         { href: "/sincerely-club", label: "The Sincerely Club" },
         { href: "/contact", label: "Contact" },
-        { href: "/foundation", label: "Foundation" },
+        { href: "/about-us", label: "About Us" },
     ];
 
     return (
@@ -47,11 +46,6 @@ export function Navbar() {
                         width={170}
                         height={150}
                     />
-                    {isFoundation && (
-                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 mt-1">
-                            Foundation
-                        </span>
-                    )}
                 </Link>
 
                 {/* Desktop Nav - Unified Horizontal Strip */}
@@ -71,7 +65,7 @@ export function Navbar() {
 
                     <Link href="/contact">
                         <Button
-                            className="h-12 px-8 rounded-full font-black uppercase tracking-[0.2em] text-[10px] bg-white text-black hover:bg-gray-200 transition-all duration-500"
+                            className="h-12 px-8 rounded-full font-black uppercase tracking-[0.2em] text-[13px] bg-white text-black hover:bg-gray-200 transition-all duration-500"
                         >
                             Book Demo
                         </Button>

@@ -5,7 +5,15 @@ import { cn } from "@/lib/utils";
 import { ArrowDown } from "lucide-react";
 import { useRef } from "react";
 
-const PHASES = [
+export interface RoadmapItem {
+    num: string;
+    title: string;
+    desc: string;
+    meta: string;
+    active?: boolean;
+}
+
+const DEFAULT_PHASES: RoadmapItem[] = [
     {
         num: "01",
         title: "Alignment & Planning",
@@ -39,7 +47,17 @@ const PHASES = [
     }
 ];
 
-export function KeynoteRoadmap() {
+interface KeynoteRoadmapProps {
+    items?: RoadmapItem[];
+    title?: React.ReactNode;
+    subtitle?: string;
+}
+
+export function KeynoteRoadmap({
+    items = DEFAULT_PHASES,
+    title = <>The <br /> Roadmap</>,
+    subtitle = "Timeline"
+}: KeynoteRoadmapProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -55,11 +73,11 @@ export function KeynoteRoadmap() {
                 <div className="text-center mb-24 space-y-6">
                     <span className="inline-block border border-black/20 rounded-full px-4 py-1">
                         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-black/60">
-                            Timeline
+                            {subtitle}
                         </span>
                     </span>
                     <h2 className="text-6xl md:text-9xl font-black uppercase tracking-tighter leading-[0.8]">
-                        The <br /> Roadmap
+                        {title}
                     </h2>
                 </div>
 
@@ -74,7 +92,7 @@ export function KeynoteRoadmap() {
                     />
 
                     <div className="space-y-24">
-                        {PHASES.map((phase, i) => (
+                        {items.map((item, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, y: 30 }}
@@ -86,7 +104,7 @@ export function KeynoteRoadmap() {
                                     i % 2 === 0 ? "md:flex-row-reverse" : ""
                                 )}
                             >
-                                {/* Phase Content */}
+                                {/* Item Content */}
                                 <div className={cn(
                                     "flex-1 space-y-4 pl-12 md:pl-0",
                                     i % 2 === 0 ? "md:text-left" : "md:text-right"
@@ -96,17 +114,17 @@ export function KeynoteRoadmap() {
                                         i % 2 === 0 ? "md:justify-start" : "md:justify-end"
                                     )}>
                                         <span className="text-[10px] font-black uppercase tracking-[0.3em] text-black/40 block">
-                                            {phase.meta}
+                                            {item.meta}
                                         </span>
                                     </div>
                                     <h3 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.85]">
-                                        {phase.title}
+                                        {item.title}
                                     </h3>
                                     <p className={cn(
                                         "text-lg font-medium text-black/60 leading-relaxed max-w-sm",
                                         i % 2 === 0 ? "mr-auto" : "ml-auto"
                                     )}>
-                                        {phase.desc}
+                                        {item.desc}
                                     </p>
                                 </div>
 
@@ -114,9 +132,9 @@ export function KeynoteRoadmap() {
                                 <div className="absolute left-0 md:left-1/2 -translate-x-[5px] md:-translate-x-1/2 flex items-center justify-center">
                                     <div className={cn(
                                         "w-10 h-10 border-2 border-black bg-white flex items-center justify-center z-10 transition-colors duration-500",
-                                        phase.active ? "bg-black text-white" : "text-black"
+                                        item.active ? "bg-black text-white" : "text-black"
                                     )}>
-                                        <span className="text-[10px] font-black">{phase.num}</span>
+                                        <span className="text-[10px] font-black">{item.num}</span>
                                     </div>
                                 </div>
 
